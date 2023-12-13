@@ -36,8 +36,20 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Yasir | About</title>
-        <meta name="description" content="About" />
+        <title>Yasir Rahman</title>
+        <meta
+          name="description"
+          content="Yasir Rahman's biography and achievements in coding, passion, and innovation."
+        />
+        <meta name="author" content="Yasir Rahman" />
+        <meta
+          name="keywords"
+          content="competitive programming, web development, MERN stack, tech enthusiast"
+        />
+        <meta
+          property="og:description"
+          content="Yasir Rahman's biography and achievements in coding, passion, and innovation."
+        />
       </Head>
       <main className="flex flex-col items-center justify-center w-full dark:text-light">
         <Layout className="pt-16">

@@ -208,7 +208,7 @@ const NavBar = () => {
               <motion.a
                 href="https://www.linkedin.com/in/yasir-rahman-chy/"
                 target={"_blank"}
-                className="w-8 mr-3"
+                className="w-6 mr-2"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -217,7 +217,7 @@ const NavBar = () => {
               <motion.a
                 href="https://github.com/ChyYasir"
                 target={"_blank"}
-                className="w-7 mx-3 dark:text-dark text-light"
+                className="w-6 mx-2 dark:text-dark text-light"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -226,7 +226,7 @@ const NavBar = () => {
               <motion.a
                 href="https://discord.com/users/758387316103446599"
                 target={"_blank"}
-                className="w-7 mx-3"
+                className="w-6 mx-2"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -236,7 +236,7 @@ const NavBar = () => {
               <motion.a
                 href="https://www.facebook.com/profile.php?id=100042767077083"
                 target={"_blank"}
-                className="w-7 mx-3"
+                className="w-6 mx-2"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -245,7 +245,7 @@ const NavBar = () => {
               <motion.a
                 href={"mailto:chyyasir2000@gmail.com"}
                 target={"_blank"}
-                className="w-7 mx-3"
+                className="w-6 mx-2"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -253,7 +253,7 @@ const NavBar = () => {
               </motion.a>
               <button
                 onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-                className={`w-6 ml-4 text-2xl flex items-center justify-center rounded-full p-1
+                className={`w-6 ml-2 text-2xl flex items-center justify-center rounded-full p-1
             `}
               >
                 {mode === "dark" ? "☀️" : "🌙"}
