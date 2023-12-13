@@ -50,9 +50,10 @@ const Project = ({ title, details, status, githubLink, images }) => {
             <h2 className="text-3xl font-bold capitalize text-dark/75 dark:text-light/75 hover:underline xs:text-lg">
               {title}
             </h2>
-            <p className="md:text-sm text-xl mb-2 text-dark dark:text-light">
-              {details}
-            </p>
+            <div
+              dangerouslySetInnerHTML={{ __html: details }}
+              className="text-dark dark:text-light"
+            />
           </div>
           <div className="flex items-center justify-between">
             <span
@@ -104,11 +105,13 @@ const projects = () => {
           <ul className="grid grid-cols-1  gap-16 lg:gap-8 md:gap-y-16">
             <Project
               title={"Tuition Media Internal Management System"}
-              details={
-                "• Developed an educational platform to facilitate online learning." +
-                "\n• Implemented features for content delivery and student interaction." +
-                "\n• Utilized React-Redux for state management and Tailwind CSS for a modern design."
-              }
+              details={`
+    <ul>
+      <li>- Led the development of an internal system for managing tuition media.</li>
+      <li>- Implemented advanced server-side search filter and pagination and also implemented some business analytics.</li>
+      <li>- Utilized React-Redux Toolkit for efficient state management and Material UI for a user-friendly interface.</li>
+    </ul>
+  `}
               status={"Paid"}
               images={project1Images}
             />
