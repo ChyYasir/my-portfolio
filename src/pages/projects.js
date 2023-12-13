@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Project11 from "../../public/images/projects/project1-1.png";
+// import Project11 from "../../public/images/projects/project1-1.png";
 // import Project12 from "../../public/images/projects/project1-2.png";
 // import Project13 from "../../public/images/projects/project1-3.png";
 // import Project14 from "../../public/images/projects/project1-4.png";
@@ -77,7 +77,7 @@ const Project = ({ title, details, status, githubLink, images }) => {
 const projects = () => {
   // Replace these images with your project images
   const project1Images = [
-    Project11,
+    // Project11,
     // Project12,
     // Project13,
     // Project14,
