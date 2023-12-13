@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Project11 from "../../public/images/projects/project1-1.PNG";
-import Project12 from "../../public/images/projects/project1-2.PNG";
-import Project13 from "../../public/images/projects/project1-3.PNG";
-import Project14 from "../../public/images/projects/project1-4.PNG";
-import Project15 from "../../public/images/projects/project1-5.PNG";
-import Project16 from "../../public/images/projects/project1-6.PNG";
+import Project11 from "../../public/images/projects/project1-1.png";
+import Project12 from "../../public/images/projects/project1-2.png";
+import Project13 from "../../public/images/projects/project1-3.png";
+import Project14 from "../../public/images/projects/project1-4.png";
+import Project15 from "../../public/images/projects/project1-5.png";
+import Project16 from "../../public/images/projects/project1-6.png";
 const FrameImage = motion(Image);
 
 const Project = ({ title, details, status, githubLink, images }) => {
