@@ -32,4 +32,8 @@ This portfolio website serves as a central hub for presenting my professional pr
 
   ```
 
+<<<<<<< HEAD
   ```
+=======
+   ```
+>>>>>>> 92e62ec22fd498cd6ae8a8a604c65cd80bf89344
