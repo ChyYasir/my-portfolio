@@ -10,8 +10,6 @@ Welcome to my portfolio website! This repository contains the source code for my
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Pages](#pages)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
@@ -30,10 +28,24 @@ This portfolio website serves as a central hub for presenting my professional pr
 - **Styling:** Tailwind CSS, Framer motion
 - **Deployment:** Vercel
 
-  ```
+## Pages
 
-<<<<<<< HEAD
-  ```
-=======
-   ```
->>>>>>> 92e62ec22fd498cd6ae8a8a604c65cd80bf89344
+### Home Page
+
+![Home Page (Dark)](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/home-dark.JPG)
+![Home Page (Light)](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/home-light.JPG)
+![Mobile Responsive](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/mobile-home.JPG)
+
+### About Page
+
+![About Page (Dark)](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/about-dark.JPG)
+![ICPC/IUPC Experience](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/about-1-dark.JPG)
+![Skills Section](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/about-2-dark.JPG)
+
+### Explore My Projects
+
+![Explore My Projects](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/projects-dark.JPG)
+
+### Achievements
+
+![Achievements](https://github.com/ChyYasir/my-portfolio/blob/main/website%20images/achievements.JPG)
