@@ -13,12 +13,12 @@ import Project13 from "../../public/images/projects/project1-3.jpeg";
 import Project14 from "../../public/images/projects/project1-4.jpeg";
 import Project15 from "../../public/images/projects/project1-5.jpeg";
 import Project16 from "../../public/images/projects/project1-6.jpeg";
-import Project21 from "../../public/images/projects/project2-1.JPG";
-import Project22 from "../../public/images/projects/project2-2.JPG";
-import Project23 from "../../public/images/projects/project2-3.JPG";
-import Project24 from "../../public/images/projects/project2-4.JPG";
-import Project25 from "../../public/images/projects/project2-5.JPG";
-import Project26 from "../../public/images/projects/project2-6.JPG";
+import Project21 from "../../public/images/projects/project2-1.jpeg";
+import Project22 from "../../public/images/projects/project2-2.jpeg";
+import Project23 from "../../public/images/projects/project2-3.jpeg";
+import Project24 from "../../public/images/projects/project2-4.jpeg";
+import Project25 from "../../public/images/projects/project2-5.jpeg";
+import Project26 from "../../public/images/projects/project2-6.jpeg";
 const FrameImage = motion(Image);
 
 const Project = ({ title, details, status, githubLink, images }) => {
