@@ -40,11 +40,7 @@ const Skills = () => {
           skills="Pandas | Numpy | Matplotlib | Jupyter Notebooks | SQL"
           emoji="📊"
         />
-        <SkillCategory
-          category="Others"
-          skills="Latex | Web Scraping"
-          emoji="📄"
-        />
+        <SkillCategory category="Cloud" skills="AWS" emoji="📄" />
       </div>
     </div>
   );

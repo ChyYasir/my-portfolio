@@ -7,12 +7,18 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Project11 from "../../public/images/projects//project1-1.jpeg";
+import Project11 from "../../public/images/projects/project1-1.jpeg";
 import Project12 from "../../public/images/projects/project1-2.jpeg";
 import Project13 from "../../public/images/projects/project1-3.jpeg";
 import Project14 from "../../public/images/projects/project1-4.jpeg";
 import Project15 from "../../public/images/projects/project1-5.jpeg";
 import Project16 from "../../public/images/projects/project1-6.jpeg";
+import Project21 from "../../public/images/projects/project2-1.JPG";
+import Project22 from "../../public/images/projects/project2-2.JPG";
+import Project23 from "../../public/images/projects/project2-3.JPG";
+import Project24 from "../../public/images/projects/project2-4.JPG";
+import Project25 from "../../public/images/projects/project2-5.JPG";
+import Project26 from "../../public/images/projects/project2-6.JPG";
 const FrameImage = motion(Image);
 
 const Project = ({ title, details, status, githubLink, images }) => {
@@ -86,7 +92,12 @@ const projects = () => {
     Project16,
   ];
   const project2Images = [
-    /* Image URLs */
+    Project21,
+    Project22,
+    Project23,
+    Project24,
+    Project25,
+    Project26,
   ];
   // Add more projects and their images as needed
 
@@ -114,6 +125,23 @@ const projects = () => {
   `}
               status={"Paid"}
               images={project1Images}
+            />
+            <Project
+              title={"BreakByte Blog Admin Panel"}
+              details={`
+    <ul>
+      <li>- Implemented Multitenant architecture for scalability and flexibility.</li>
+      <li>- Integrated tokenization for secure authentication.</li>
+      <li>- Utilized Tiptap editor for advanced blog content editing.</li>
+      <li>- Integrated business analytics functionalities.</li>
+      <li>- Deployed on <span style="color: #FFD700;">AWS</span>.Used EC2 instance for hosting the backend and frontend.</li>
+      <li>- Configured nginx as a reverse proxy for efficient routing.</li>
+      <li>- Utilized pm2 as a process manager for enhanced stability.</li>
+    
+    </ul>
+  `}
+              status={"Paid"}
+              images={project2Images}
             />
 
             {/* Add more projects here */}
