@@ -1,0 +1,148 @@
+"use client";
+import Layout from "@/components/Layout";
+import Head from "next/head";
+import Image from "next/image";
+import AnimatedText from "@/components/AnimatedText";
+import { GithubIcon } from "@/components/Icons";
+import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Project11 from "../../../public/images/projects/project1-1.jpeg";
+import Project12 from "../../../public/images/projects/project1-2.jpeg";
+import Project13 from "../../../public/images/projects/project1-3.jpeg";
+import Project14 from "../../../public/images/projects/project1-4.jpeg";
+import Project15 from "../../../public/images/projects/project1-5.jpeg";
+import Project16 from "../../../public/images/projects/project1-6.jpeg";
+import Project21 from "../../../public/images/projects/project2-1.jpeg";
+import Project22 from "../../../public/images/projects/project2-2.jpeg";
+import Project23 from "../../../public/images/projects/project2-3.jpeg";
+import Project24 from "../../../public/images/projects/project2-4.jpeg";
+import Project25 from "../../../public/images/projects/project2-5.jpeg";
+import Project26 from "../../../public/images/projects/project2-6.jpeg";
+
+const FrameImage = motion(Image);
+
+const Project = ({ title, details, status, githubLink, images }) => {
+  return (
+    <li className="relative col-span-1 w-full p-4 bg-light dark:bg-dark border border-solid border-dark dark:border-light rounded-2xl">
+      <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2000,
+            }),
+          ]}
+        >
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <FrameImage
+                  src={image}
+                  alt={`${title} - Image ${index + 1}`}
+                  className="w-full h-auto rounded-lg shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {/* <CarouselPrevious />
+          <CarouselNext /> */}
+        </Carousel>
+
+        <div>
+          <h2 className="text-3xl font-bold capitalize text-dark/75 dark:text-light/75 hover:underline xs:text-lg">
+            {title}
+          </h2>
+          <div
+            dangerouslySetInnerHTML={{ __html: details }}
+            className="text-dark dark:text-light"
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <span
+            className={`text-lg font-semibold text-${
+              status === "Paid" ? "primaryDark" : "primary"
+            } dark:text-${status === "Paid" ? "primaryDark" : "light"}`}
+          >
+            {status}
+          </span>
+          {githubLink && (
+            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+              <GithubIcon className="w-6 h-6 text-dark dark:text-light hover:text-primary hover:dark:text-primaryDark" />
+            </a>
+          )}
+        </div>
+      </div>
+    </li>
+  );
+};
+
+const Projects = () => {
+  const project1Images = [
+    Project11,
+    Project12,
+    Project13,
+    Project14,
+    Project15,
+    Project16,
+  ];
+  const project2Images = [
+    Project21,
+    Project22,
+    Project23,
+    Project24,
+    Project25,
+    Project26,
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Yasir | Projects</title>
+        <meta name="description" content="projects" />
+      </Head>
+      <main className="flex flex-col items-center justify-center w-full mb-16 overflow-hidden">
+        <Layout className="pt-16">
+          <AnimatedText
+            text={"Explore My Projects"}
+            className={"mb-16 lg:!text-6xl md:!text-6xl sm:!text-4xl sm:mb-8"}
+          />
+          <Project
+            title={"Tuition Media Internal Management System"}
+            details={`<ul>
+              <li>- Led the development of an internal system for managing tuition media.</li>
+              <li>- Implemented advanced server-side search filter and pagination and also implemented some business analytics.</li>
+              <li>- Utilized React-Redux Toolkit for efficient state management and Material UI for a user-friendly interface.</li>
+            </ul>`}
+            status={"Paid"}
+            images={project1Images}
+          />
+          <Project
+            title={"BreakByte Blog Admin Panel"}
+            details={`<ul>
+              <li>- Implemented Multitenant architecture for scalability and flexibility.</li>
+              <li>- Integrated tokenization for secure authentication.</li>
+              <li>- Utilized Tiptap editor for advanced blog content editing.</li>
+              <li>- Integrated business analytics functionalities.</li>
+              <li>- Deployed on <span style="color: #FFD700;">AWS</span>.Used EC2 instance for hosting the backend and frontend.</li>
+              <li>- Configured nginx as a reverse proxy for efficient routing.</li>
+              <li>- Utilized pm2 as a process manager for enhanced stability.</li>
+            </ul>`}
+            status={"Paid"}
+            images={project2Images}
+          />
+          {/* Add more projects here */}
+        </Layout>
+      </main>
+    </>
+  );
+};
+
+export default Projects;

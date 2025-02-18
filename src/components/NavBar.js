@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {
   DiscordIcon,
   FacebookIcon,
@@ -60,6 +62,7 @@ const NavBar = () => {
   const handleClick = () => {
     setIsopen(!isOpen);
   };
+  const router = useRouter();
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= thresholdWidthForMobile);
