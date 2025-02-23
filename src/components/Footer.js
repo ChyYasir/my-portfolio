@@ -1,28 +1,27 @@
 import React from "react";
-import Layout from "./Layout";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
-const Footer = () => {
-  return (
-    <footer className="bg-dark text-light p-4">
-      <div className="flex justify-between items-center">
-        <span>
-          © {new Date().getFullYear()} Yasir Rahman. All Rights Reserved.
-        </span>
-        <div className="flex space-x-4">
-          <Link href="https://github.com/ChyYasir" className="text-primary">
-            GitHub
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/yasir-rahman-chy/"
-            className="text-primary"
-          >
-            LinkedIn
-          </Link>
-        </div>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="bg-black/80 border-t border-green-500/30 py-4">
+    <div className="max-w-4xl mx-auto text-center">
+      <motion.p
+        className="text-green-400 font-mono text-sm"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        {">"} Hacked by Yasir Rahman © {new Date().getFullYear()}
+        <motion.span
+          className="inline-block ml-2"
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        >
+          _
+        </motion.span>
+      </motion.p>
+    </div>
+  </footer>
+);
 
 export default Footer;
