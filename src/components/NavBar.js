@@ -1,275 +1,96 @@
 "use client";
-
+import React, { useState } from "react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import Logo from "./Logo";
-import { useRouter } from "next/navigation";
-import {
-  DiscordIcon,
-  FacebookIcon,
-  GithubIcon,
-  GmailIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from "./Icons";
 import { motion } from "framer-motion";
-import useThemeSwitcher from "./hooks/useThemeSwitcher";
-const CustomLink = ({ href, title, className = "" }) => {
-  const router = useRouter();
-  // console.log(router);
-  return (
-    <Link href={href} className={`${className} relative group`}>
-      {title}
-      <span
-        className={`h-[1px] inline-block bg-dark absolute -bottom-0.5 left-0 group-hover:w-full 
-        transition-[width] ease duration-300
-        ${router.asPath === href ? "w-full" : "w-0"} dark:bg-light`}
-      >
-        &nbsp;
-      </span>
-    </Link>
-  );
-};
-const CustomMobileLink = ({ href, title, className = "", toggle }) => {
-  const router = useRouter();
+import { Menu, X } from "lucide-react";
 
-  const handleClick = () => {
-    toggle();
-    router.push(href);
-  };
-  return (
-    <button
-      href={href}
-      className={`${className} relative group text-light dark:text-dark my-2`}
-      onClick={handleClick}
-    >
-      {title}
-      <span
-        className={`h-[1px] inline-block bg-light absolute -bottom-0.5 left-0 group-hover:w-full 
-        transition-[width] ease duration-300
-        ${router.asPath === href ? "w-full" : "w-0"} dark:bg-dark`}
-      >
-        &nbsp;
-      </span>
-    </button>
-  );
-};
-const thresholdWidthForMobile = 1023;
 const NavBar = () => {
-  const [mode, setMode] = useThemeSwitcher();
-  const [isOpen, setIsopen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const handleClick = () => {
-    setIsopen(!isOpen);
-  };
-  const router = useRouter();
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= thresholdWidthForMobile);
-    };
+  const [isOpen, setIsOpen] = useState(false);
 
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize);
+  const navItems = [
+    { name: "[ Home ]", path: "/" },
+    { name: "[ Projects ]", path: "/projects" },
+    { name: "[ Experience ]", path: "/experience" },
+    { name: "[ Blog ]", path: "/blog" },
+    { name: "[ Achievements ]", path: "/achievements" },
+  ];
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
-    <>
-      <header
-        className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light
-      relative z-10 lg:px-16 md:px-12 sm:px-8"
-      >
-        <button
-          className="lg:flex flex-col justify-center items-center hidden"
-          onClick={handleClick}
-        >
-          <span
-            className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm  ${
-              isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-            }`}
-          ></span>
-          <span
-            className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm my-0.5 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
-          ></span>
-          <span
-            className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm ${
-              isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-            }`}
-          ></span>
-        </button>
-
-        <div className="w-full flex justify-between items-center lg:hidden">
-          <nav>
-            <CustomLink href="/" title="Home" className="mr-4" />
-            <CustomLink href="/about" title="About" className="mx-4 " />
-            <CustomLink href="/projects" title="Projects" className="mx-4" />
-            <CustomLink
-              href="/achievements"
-              title="Achievements"
-              className="mx-4"
-            />
-          </nav>
-
-          <nav className="flex items-center justify-center flex-wrap">
-            <motion.a
-              href="https://www.linkedin.com/in/yasir-rahman-chy/"
-              target={"_blank"}
-              className="w-8 mr-3"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <LinkedInIcon />
-            </motion.a>
-            <motion.a
-              href="https://github.com/ChyYasir"
-              target={"_blank"}
-              className="w-7 mx-3"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <GithubIcon />
-            </motion.a>
-            <motion.a
-              href="https://discord.com/users/758387316103446599"
-              target={"_blank"}
-              className="w-7 mx-3"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <DiscordIcon />
-            </motion.a>
-
-            <motion.a
-              href="https://www.facebook.com/profile.php?id=100042767077083"
-              target={"_blank"}
-              className="w-7 mx-3"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <FacebookIcon />
-            </motion.a>
-            <motion.a
-              href={"mailto:chyyasir2000@gmail.com"}
-              target={"_blank"}
-              className="w-7 mx-3"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <GmailIcon />
-            </motion.a>
-            <button
-              onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-              className={`w-6 ml-5 text-2xl flex items-center justify-center rounded-full p-1
-            `}
-            >
-              {mode === "dark" ? "☀️" : "🌙"}
-            </button>
-          </nav>
-        </div>
-
-        {/* for mobile  */}
-
-        {isOpen && isMobile ? (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-green-500/20"
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <motion.div
-            className="min-w-[70vw] flex flex-col justify-between items-center fixed z-30 top-1/2 left-1/2 
-        -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
-            initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
-            animate={{ scale: 1, opacity: 100 }}
+            className="text-green-400 text-xl font-mono"
+            whileHover={{ scale: 1.05 }}
           >
-            <nav className="flex flex-col items-center justify-center">
-              <CustomMobileLink
-                href="/"
-                title="Home"
-                className=""
-                toggle={handleClick}
-              />
-              <CustomMobileLink
-                href="/about"
-                title="About"
-                className=""
-                toggle={handleClick}
-              />
-              <CustomMobileLink
-                href="/projects"
-                title="Projects"
-                className=""
-                toggle={handleClick}
-              />
-              <CustomMobileLink
-                href="/achievements"
-                title="Achievements"
-                className=""
-                toggle={handleClick}
-              />
-            </nav>
-
-            <nav className="flex items-center justify-center flex-wrap mt-2">
-              <motion.a
-                href="https://www.linkedin.com/in/yasir-rahman-chy/"
-                target={"_blank"}
-                className="w-6 mr-2"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <LinkedInIcon />
-              </motion.a>
-              <motion.a
-                href="https://github.com/ChyYasir"
-                target={"_blank"}
-                className="w-6 mx-2 dark:text-dark text-light"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <GithubIcon />
-              </motion.a>
-              <motion.a
-                href="https://discord.com/users/758387316103446599"
-                target={"_blank"}
-                className="w-6 mx-2"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <DiscordIcon />
-              </motion.a>
-
-              <motion.a
-                href="https://www.facebook.com/profile.php?id=100042767077083"
-                target={"_blank"}
-                className="w-6 mx-2"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <FacebookIcon />
-              </motion.a>
-              <motion.a
-                href={"mailto:chyyasir2000@gmail.com"}
-                target={"_blank"}
-                className="w-6 mx-2"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <GmailIcon />
-              </motion.a>
-              <button
-                onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-                className={`w-6 ml-2 text-2xl flex items-center justify-center rounded-full p-1
-            `}
-              >
-                {mode === "dark" ? "☀️" : "🌙"}
-              </button>
-            </nav>
+            <Link href="/">
+              <span className="cursor-pointer">
+                <span className="text-gray-400">&lt;</span>
+                <span className="text-green-400">YR</span>
+                <span className="text-gray-400">/&gt;</span>
+              </span>
+            </Link>
           </motion.div>
-        ) : null}
 
-        <div className="absolute left-[50%] top-2 translate-x-[-50%]">
-          <Logo />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.path}>
+                <motion.span
+                  className="text-gray-300 hover:text-green-400 cursor-pointer font-mono text-sm tracking-wider"
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 8px rgb(74, 222, 128)",
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {item.name}
+                </motion.span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-green-400 hover:text-green-300 transition-colors"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </header>
-    </>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 rounded-b-lg">
+              {navItems.map((item, index) => (
+                <Link key={index} href={item.path}>
+                  <motion.a
+                    className="block px-3 py-2 text-green-400 font-mono text-sm hover:bg-green-500/10 rounded-md"
+                    whileHover={{ x: 10 }}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </motion.a>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.nav>
   );
 };
 

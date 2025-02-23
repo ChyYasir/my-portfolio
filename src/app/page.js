@@ -1,66 +1,289 @@
 "use client";
-import Layout from "@/components/Layout";
-import Head from "next/head";
-import Image from "next/image";
-import profilePic from "../../public/images/profile/yasir-5.png";
-import AnimatedText from "@/components/AnimatedText";
-import Link from "next/link";
-import { LinkArrow } from "@/components/Icons";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import NetworkBackground from "@/components/NetworkBackground";
+import { Terminal, Shield, Cpu, Database, Code, Server } from "lucide-react";
+
+const MatrixRain = ({ children }) => (
+  <div className="relative overflow-hidden">
+    <div className="absolute inset-0 opacity-20 pointer-events-none">
+      {Array.from({ length: 10 }).map((_, i) => (
+        <div
+          key={i}
+          className="absolute text-green-500 text-xs font-mono"
+          style={{
+            left: `${i * 10}%`,
+            animation: `matrixRain ${1 + Math.random() * 2}s linear infinite`,
+            animationDelay: `${Math.random() * 2}s`,
+          }}
+        >
+          {Array.from({ length: 20 }).map((_, j) => (
+            <div key={j}>{"01"[Math.floor(Math.random() * 2)]}</div>
+          ))}
+        </div>
+      ))}
+    </div>
+    {children}
+  </div>
+);
+
+const SuperComputerDisplay = ({ title, content }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="bg-black/80 border border-green-500/30 rounded-lg p-4"
+    >
+      <div className="flex items-center justify-between mb-2 border-b border-green-500/20 pb-2">
+        <div className="flex items-center space-x-2">
+          <Server className="w-4 h-4 text-green-400" />
+          <span className="text-green-400 font-mono text-sm">{title}</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          <span className="text-green-400 font-mono text-xs">
+            {isLoading ? "LOADING..." : "SYSTEM READY"}
+          </span>
+        </div>
+      </div>
+      <AnimatePresence>
+        {!isLoading && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-green-300 font-mono"
+          >
+            {content}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
+
+const ProjectCard = ({ project }) => (
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    className="bg-black/70 border border-green-500/20 rounded-lg p-4 backdrop-blur-sm"
+  >
+    <div className="flex items-center space-x-2 mb-2">
+      <project.icon className="w-5 h-5 text-green-400" />
+      <h3 className="text-green-400 font-mono">{project.title}</h3>
+    </div>
+    <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+    <div className="flex flex-wrap gap-2">
+      {project.tech.map((tech, index) => (
+        <span
+          key={index}
+          className="text-xs px-2 py-1 bg-green-500/10 rounded-full text-green-400"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </motion.div>
+);
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSection((prev) => (prev + 1) % 4);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const projects = [
+    {
+      icon: Shield,
+      title: "Secure Payment Gateway",
+      description: "Engineered a highly secure payment processing system",
+      tech: ["Node.js", "AWS", "Encryption"],
+    },
+    {
+      icon: Database,
+      title: "Data Pipeline Architecture",
+      description: "Built scalable data processing pipeline",
+      tech: ["Python", "Apache Kafka", "MongoDB"],
+    },
+    {
+      icon: Code,
+      title: "AI-Powered Analytics",
+      description: "Developed machine learning models for data analysis",
+      tech: ["TensorFlow", "Python", "React"],
+    },
+  ];
+
   return (
     <>
-      <Head>
-        <title>Yasir Rahman</title>
-        <meta
-          name="description"
-          content="Yasir Rahman - Tech Enthusiast. Solving life's challenges through code."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
-        <Layout className="pt-0 md:pt-16 sm:pt-8">
-          <div className="flex items-center justify-between w-full lg:flex-col">
-            <div className="w-1/2 md:w-3/4">
-              <Image
-                src={profilePic}
-                alt="Yasir Rahman"
-                className="w-full h-auto md:inline-block md:w-full"
-                priority
-              />
-            </div>
-            <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
-              <AnimatedText
-                text={"Decoding life's code, one line at a time"}
-                className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
-              />
-              <p className="mt-2 mb-4 text-base font-medium md:text-sm sm:text-xs">
-                Hi, I&apos;m Yasir Rahman, a tech enthusiast dedicated to
-                solving life&apos;s challenges through code. Join me in my
-                journey of problem-solving—one line at a time. Welcome to my
-                world of practical solutions and innovation!
-              </p>
-              <div className="flex items-center self-start mt-2 lg:self-center">
-                <Link
-                  href="/Resume_of_Yasir_Rahman.pdf"
-                  className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark transition-all ease-in-out duration-300 border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:border-light hover:dark:bg-dark hover:dark:text-light md:p-2 md:px-4 md:text-base"
-                  download={true}
-                  target="_blank"
-                >
-                  Resume <LinkArrow className={"w-6 ml-1"} />
-                </Link>
-                <Link
-                  href={"mailto:chyyasir2000@gmail.com"}
-                  target="_blank"
-                  className="ml-4 flex items-center bg-light text-dark p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-dark hover:text-light transition-all ease-in-out duration-300 border-2 border-solid border-dark dark:bg-dark dark:text-light hover:dark:bg-light hover:dark:text-dark dark:border-light md:p-2 md:px-4 md:text-base"
-                >
-                  Contact Me
-                </Link>
+      <NetworkBackground />
+      <main className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto space-y-12">
+          {/* Hero Section */}
+          <MatrixRain>
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center space-y-8 py-12"
+            >
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-6xl font-bold font-mono"
+              >
+                <span className="bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">
+                  YASIR RAHMAN
+                </span>
+              </motion.h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <SuperComputerDisplay
+                  title="SYSTEM STATUS"
+                  content={
+                    <div className="space-y-2">
+                      <p>{">"} Role: Senior Software Engineer</p>
+                      <p>{">"} Status: Active Development</p>
+                      <p>{">"} Location: Bangladesh</p>
+                      <p>{">"} Systems: Operational</p>
+                    </div>
+                  }
+                />
+                <SuperComputerDisplay
+                  title="MISSION OBJECTIVES"
+                  content={
+                    <div className="space-y-2">
+                      <p>{">"} Build Scalable Systems</p>
+                      <p>{">"} Optimize Performance</p>
+                      <p>{">"} Lead Tech Innovation</p>
+                      <p>{">"} Mentor Future Engineers</p>
+                    </div>
+                  }
+                />
               </div>
+            </motion.section>
+          </MatrixRain>
+
+          {/* Skills Dashboard */}
+          <section className="space-y-6">
+            <h2 className="text-2xl font-mono text-green-400 text-center mb-8">
+              {"<"} Technical Capabilities {">"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Coding Languages",
+                  skills: ["C", "C++", "Python", "Javascript", "Typescript"],
+                },
+                {
+                  title: "Core Systems",
+                  skills: [
+                    "React",
+                    "Node.js",
+                    "Python",
+                    "TypeScript",
+                    "GraphQL",
+                  ],
+                },
+                {
+                  title: "Infrastructure",
+                  skills: [
+                    "AWS",
+                    "Docker",
+                    "Kubernetes",
+                    "MongoDB",
+                    "PostgreSQL",
+                  ],
+                },
+                {
+                  title: "Architecture",
+                  skills: [
+                    "System Design",
+                    "Microservices",
+                    "API Design",
+                    "Security",
+                  ],
+                },
+              ].map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  className="bg-black/80 border border-green-500/20 rounded-lg p-6"
+                >
+                  <h3 className="text-xl font-mono text-green-400 mb-4">
+                    {category.title}
+                  </h3>
+                  <div className="space-y-2">
+                    {category.skills.map((skill, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="flex items-center space-x-2"
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: idx * 0.1 + index * 0.2 }}
+                      >
+                        <span className="text-green-500">→</span>
+                        <span className="text-gray-300 font-mono">{skill}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div>
-        </Layout>
+          </section>
+
+          {/* Projects Showcase */}
+          <section className="space-y-6">
+            <h2 className="text-2xl font-mono text-green-400 text-center mb-8">
+              {"<"} Recent Deployments {">"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
+          </section>
+
+          {/* Call to Action */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.5 }}
+            className="text-center space-y-8 py-12"
+          >
+            <SuperComputerDisplay
+              title="CONTACT PROTOCOLS"
+              content={
+                <div className="space-y-4">
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="/Resume_of_Yasir_Rahman.pdf"
+                    className="block px-6 py-3 bg-green-500 text-black rounded-lg font-mono hover:bg-green-400 transition-colors mb-4"
+                  >
+                    {">"} ACCESS CREDENTIALS [CV]
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="mailto:chyyasir2000@gmail.com"
+                    className="block px-6 py-3 border border-green-500 text-green-400 rounded-lg font-mono hover:bg-green-500/10 transition-colors"
+                  >
+                    {">"} INITIALIZE COMMUNICATION
+                  </motion.a>
+                </div>
+              }
+            />
+          </motion.section>
+        </div>
       </main>
     </>
   );
