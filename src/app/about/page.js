@@ -35,82 +35,65 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Yasir Rahman</title>
-        <meta
-          name="description"
-          content="Yasir Rahman's biography and achievements in coding, passion, and innovation."
-        />
-        <meta name="author" content="Yasir Rahman" />
-        <meta
-          name="keywords"
-          content="competitive programming, web development, MERN stack, tech enthusiast"
-        />
+        <title>Yasir | About</title>
+        <meta name="description" content="About Yasir Rahman" />
       </Head>
-      <main className="flex flex-col items-center justify-center w-full dark:text-light">
-        <Layout className="pt-16">
-          <AnimatedText
-            text={"Code. Passion. Innovation"}
-            className={
-              "mb-16 lg:text-6xl md:text-6xl sm:text-4xl sm:mb-8 text-center text-dark dark:text-light"
-            }
-          />
-          <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
-            <h2 className="mb-4 text-lg font-bold uppercase text-dark dark:text-light/75">
-              Biography
-            </h2>
-            <p className="font-medium">
-              Greetings! I am Yasir Rahman, currently pursuing a degree in
-              Computer Science and Engineering at CUET. With a passion for
-              competitive programming, I thrive on the thrill of algorithmic
-              challenges. Beyond the realms of academia, I&apos;ve delved into
-              the world of web development, crafting innovative solutions using
-              the MERN stack.
-            </p>
-            <p className="font-medium mt-4">
-              When I&apos;m not glued to my screen, you might catch me buzzing
-              around like an excited bee—full of energy and maybe a tad quirky.
-              My goal? To use tech superpowers for good, solving everyday
-              problems and making the world a bit brighter, one coding challenge
-              at a time!
-            </p>
-          </div>
-          <div className="col-span-3 xl:col-span-4 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light md:order-1 md:col-span-8">
-            <Image
-              src={profilePic}
-              alt="Yasir Rahman"
-              className="w-full h-auto rounded-2xl"
-              priority
-            />
-          </div>
-          <div className="col-span-2 xl:col-span-8 xl:flex-row flex flex-col items-end justify-between xl:items-center md:order-3 md:col-span-8">
-            <div className="flex flex-col items-center justify-center ">
-              <span className="inline-block text-5xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                <AnimatedNumbers value={1500} />+
-              </span>
-              <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 md:text-base sm:text-sm xs:text-xs xl:text-center mt-2">
-                Problems Solved
-              </h2>
+      <main className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <section className="text-center space-y-8 py-12">
+            <h1 className="text-6xl font-bold font-mono text-green-400">
+              About Me
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="col-span-1">
+                <Image
+                  src={profilePic}
+                  alt="Yasir Rahman"
+                  className="w-full h-auto rounded-2xl"
+                  priority
+                />
+              </div>
+              <div className="col-span-1 flex flex-col justify-center">
+                <p className="text-gray-300 text-lg">
+                  I am a Senior Software Engineer with a passion for building
+                  scalable applications and leading tech innovations. With
+                  experience in various programming languages and frameworks, I
+                  strive to optimize performance and mentor future engineers.
+                </p>
+                <div className="flex flex-col items-center mt-4">
+                  <span className="inline-block text-5xl font-bold">
+                    <AnimatedNumbers value={1500} />+
+                  </span>
+                  <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 mt-2">
+                    Problems Solved
+                  </h2>
+                </div>
+                <div className="flex flex-col items-center mt-4">
+                  <span className="inline-block text-5xl font-bold">
+                    <AnimatedNumbers value={6} />+
+                  </span>
+                  <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 mt-2">
+                    Projects Completed
+                  </h2>
+                </div>
+                <div className="flex flex-col items-center mt-4">
+                  <span className="inline-block text-5xl font-bold">
+                    <AnimatedNumbers value={2} />+
+                  </span>
+                  <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 mt-2">
+                    Years Experience
+                  </h2>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center xl:items-center">
-              <span className="inline-block text-5xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                <AnimatedNumbers value={6} />+
-              </span>
-              <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 md:text-base sm:text-sm xs:text-xs xl:text-center mt-2">
-                Projects Completed
-              </h2>
-            </div>
-            <div className="flex flex-col items-center justify-center ">
-              <span className="inline-block text-5xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                <AnimatedNumbers value={2} />+
-              </span>
-              <h2 className="text-lg font-medium capitalize text-dark/75 dark:text-light/75 md:text-base sm:text-sm xs:text-xs xl:text-center mt-2">
-                Years Experience
-              </h2>
-            </div>
-          </div>
-        </Layout>
-        <Experience />
-        <Skills />
+          </section>
+
+          {/* Experience Section */}
+          <Experience />
+
+          {/* Skills Section */}
+          <Skills />
+        </div>
       </main>
     </>
   );

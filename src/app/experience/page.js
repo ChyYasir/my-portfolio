@@ -21,6 +21,19 @@ import {
 } from "lucide-react";
 import MatrixRain from "@/components/MatrixRain";
 
+import Project11 from "../../../public/images/projects/project1-1.jpeg";
+import Project12 from "../../../public/images/projects/project1-2.jpeg";
+import Project13 from "../../../public/images/projects/project1-3.jpeg";
+import Project14 from "../../../public/images/projects/project1-4.jpeg";
+import Project15 from "../../../public/images/projects/project1-5.jpeg";
+import Project16 from "../../../public/images/projects/project1-6.jpeg";
+import Project21 from "../../../public/images/projects/project2-1.jpeg";
+import Project22 from "../../../public/images/projects/project2-2.jpeg";
+import Project23 from "../../../public/images/projects/project2-3.jpeg";
+import Project24 from "../../../public/images/projects/project2-4.jpeg";
+import Project25 from "../../../public/images/projects/project2-5.jpeg";
+import Project26 from "../../../public/images/projects/project2-6.jpeg";
+
 const GlowingBorder = ({ children, isActive }) => (
   <div className="relative group">
     <div
@@ -452,22 +465,25 @@ const ExperiencePage = () => {
   return (
     <>
       <NetworkBackground />
-      <main className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <main className="min-h-screen pt-16 md:pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <MatrixRain>
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center space-y-8 py-12"
+              className="text-center space-y-6 md:space-y-8 py-8 md:py-12"
             >
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-7xl font-bold font-mono"
+                className="text-4xl md:text-7xl font-bold font-mono"
               >
                 <span className="bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">
                   EXPERIENCE LOGS
                 </span>
+                <p className="text-green-400 font-mono text-lg md:text-xl">
+                  {"<Learn. Help. Repeat />"}
+                </p>
               </motion.h1>
               {/* <div className="flex items-center justify-center space-x-4 text-green-400 font-mono">
                 <Terminal className="w-8 h-8" />
