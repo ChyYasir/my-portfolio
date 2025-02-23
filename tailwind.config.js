@@ -6,44 +6,57 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
+  darkMode: ["class", "class"],
   theme: {
     extend: {
       fontFamily: {
         mont: ["var(--font-mont)"],
       },
-      // colors: {
-      //   dark: "#1b1b1b",
-      //   light: "#f5f5f5",
-      //   primary: "#B63E96", // 240,86,199
-      //   primaryDark: "#58E6D9", // 80,230,217
-      // },
       colors: {
-        dark: "#001528", // Intense dark bluish background
-        light: "#CCE5F4", // Pale bluish background
-        primary: "#004080", // Deep blue
-        primaryDark: "#28affc", // A slightly lighter shade of blue
+        dark: "#0d1117",
+        light: "#f0f6fc",
+        primary: "#58a6ff",
+        secondary: "#c9d1d9",
+        primaryDark: "#28affc",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          1: "hsl(var(--chart-1))",
+          2: "hsl(var(--chart-2))",
+          3: "hsl(var(--chart-3))",
+          4: "hsl(var(--chart-4))",
+          5: "hsl(var(--chart-5))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
-    screens: {
-      "2xl": { max: "1535px" },
-      // => @media (max-width: 1535px) { ... }
-
-      xl: { max: "1279px" },
-      // => @media (max-width: 1279px) { ... }
-
-      lg: { max: "1023px" },
-      // => @media (max-width: 1023px) { ... }
-
-      md: { max: "800px" },
-      // => @media (max-width: 767px) { ... }
-
-      sm: { max: "639px" },
-      // => @media (max-width: 639px) { ... }
-
-      xs: { max: "479px" },
-      // => @media (max-width: 479px) { ... }
-    },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
