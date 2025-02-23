@@ -108,6 +108,18 @@ const TerminalCard = ({ title, content, icon: Icon }) => (
 export default function Home() {
   const cards = [
     {
+      icon: Lock,
+      title: "INFO",
+      content: (
+        <ul className="space-y-1">
+          <li>{">"} Software Engineer</li>
+          <li>{">"} 2+ yrs Professional Experience</li>
+          <li>{">"} 3 Times ICPC Regionalist</li>
+          <li>{">"} Problem Solver</li>
+        </ul>
+      ),
+    },
+    {
       icon: Code,
       title: "SKILLS",
       content: (
@@ -121,24 +133,12 @@ export default function Home() {
     },
     {
       icon: Server,
-      title: "PROJECTS",
+      title: "MISSIONS",
       content: (
         <ul className="space-y-1">
-          <li>{">"} Payment Gateway (Node/AWS)</li>
-          <li>{">"} Data Pipeline (Python/Kafka)</li>
-          <li>{">"} AI Analytics (TF/React)</li>
-        </ul>
-      ),
-    },
-    {
-      icon: Lock,
-      title: "INFO",
-      content: (
-        <ul className="space-y-1">
-          <li>{">"} Software Engineer</li>
-          <li>{">"} 2+ yrs Professional Exp</li>
-          <li>{">"} 3 Times ICPC Regionalist</li>
-          <li>{">"} Problem Solver</li>
+          <li>{">"} Build Cutting Edge Tech</li>
+          <li>{">"} Build Scaling Systems</li>
+          <li>{">"} Innovate Something </li>
         </ul>
       ),
     },

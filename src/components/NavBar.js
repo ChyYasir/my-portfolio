@@ -18,21 +18,21 @@ const NavBar = () => {
 
   const socialLinks = [
     {
-      icon: "/images/svgs/github-white.svg",
-      href: "https://github.com/yourusername",
+      icon: "/images/svgs/github.svg",
+      href: "https://github.com/ChyYasir",
       color: "hover:text-purple-400",
       label: "GitHub",
     },
     {
       // icon: Linkedin,
-      icon: "/images/svgs/linkedin.svg",
-      href: "https://linkedin.com/in/yourusername",
+      icon: "/images/svgs/linkedin-2.svg",
+      href: "https://www.linkedin.com/in/yasir-rahman-chy/",
       color: "hover:text-blue-400",
       label: "LinkedIn",
     },
     {
-      icon: Facebook,
-      href: "https://facebook.com/yourusername",
+      icon: "/images/svgs/facebook.svg",
+      href: "https://www.facebook.com/profile.php?id=100042767077083",
       color: "hover:text-cyan-400",
       label: "Facebook",
     },
