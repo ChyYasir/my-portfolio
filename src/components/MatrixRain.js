@@ -1,27 +1,39 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const MatrixRain = ({ children }) => (
-  <div className="relative overflow-hidden">
-    <div className="absolute inset-0 opacity-20 pointer-events-none">
-      {Array.from({ length: 10 }).map((_, i) => (
-        <div
-          key={i}
-          className="absolute text-green-500 text-xs font-mono"
-          style={{
-            left: `${i * 10}%`,
-            animation: `matrixRain ${1 + Math.random() * 2}s linear infinite`,
-            animationDelay: `${Math.random() * 2}s`,
-          }}
-        >
-          {Array.from({ length: 20 }).map((_, j) => (
-            <div key={j}>{"01"[Math.floor(Math.random() * 2)]}</div>
-          ))}
-        </div>
-      ))}
+const MatrixRain = ({ children }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <div className="relative overflow-hidden">{children}</div>; // Placeholder during SSR
+  }
+
+  return (
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-green-500 text-xs font-mono"
+            style={{
+              left: `${i * 10}%`,
+              animation: `matrixRain ${1 + Math.random() * 2}s linear infinite`,
+              animationDelay: `${Math.random() * 2}s`,
+            }}
+          >
+            {Array.from({ length: 20 }).map((_, j) => (
+              <div key={j}>{"01"[Math.floor(Math.random() * 2)]}</div>
+            ))}
+          </div>
+        ))}
+      </div>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 export default MatrixRain;
