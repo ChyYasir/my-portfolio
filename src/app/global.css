@@ -1,18 +1,51 @@
-/* @import "tailwindcss/components";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; */
+/* Import Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Root variables */
 :root {
-  --primary: rgb(0, 255, 0);
-  --background: rgb(0, 0, 0);
-  --text: rgb(0, 255, 0);
+  --primary: rgb(0, 255, 0); /* Green */
+  --background: rgb(0, 0, 0); /* Black */
+  --text: rgb(0, 255, 0); /* Green */
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden; /* Prevents horizontal scrolling issues */
+
+/* Base styles for html and body */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures full height coverage */
+
+    color: var(--text); /* Optional: Sets default text color */
+    overflow-x: hidden; /* Prevents horizontal scrolling issues */
+  }
+
+  /* Ensure all elements inherit the background */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
 }
+
+/* Optional: Utility styles */
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
+  }
+  .text-primary {
+    color: var(--primary);
+  }
+}
+
+/* Matrix Rain animation (for MatrixRain component) */
+/* @keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+} */

@@ -6,14 +6,15 @@ const NetworkBackground = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // Only run after client-side mount
+    setIsMounted(true);
   }, []);
 
   useEffect(() => {
-    if (!isMounted) return; // Skip until mounted on client
+    if (!isMounted) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+
     let nodes = [];
     let animationFrameId;
 
@@ -87,7 +88,10 @@ const NetworkBackground = () => {
     init();
     animate();
 
-    const handleResize = () => init();
+    const handleResize = () => {
+      init();
+    };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -99,7 +103,7 @@ const NetworkBackground = () => {
   if (!isMounted) {
     return (
       <div className="fixed top-0 left-0 w-full h-full bg-[#0a0a0a] -z-10" />
-    ); // Placeholder during SSR
+    );
   }
 
   return (

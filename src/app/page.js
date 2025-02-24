@@ -147,7 +147,7 @@ export default function Home() {
   return (
     <>
       <NetworkBackground />
-      <main className="min-h-screen pt-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <main className="min-h-screen pt-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center ">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Header with Gap and Typing Text */}
           <motion.section
