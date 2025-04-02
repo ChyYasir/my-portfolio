@@ -5,9 +5,9 @@
 
 /* Root variables */
 :root {
-  --primary: rgb(0, 255, 0); /* Green */
+  --primary: #07986a; /* Green-400 from Tailwind */
   --background: rgb(0, 0, 0); /* Black */
-  --text: rgb(0, 255, 0); /* Green */
+  --text: #07986a; /* Green-400 for consistency */
 }
 
 /* Base styles for html and body */
@@ -17,16 +17,47 @@
     margin: 0;
     padding: 0;
     height: 100%; /* Ensures full height coverage */
-
+    /* background-color: var(--background); Matches your dark theme */
     color: var(--text); /* Optional: Sets default text color */
     overflow-x: hidden; /* Prevents horizontal scrolling issues */
   }
 
-  /* Ensure all elements inherit the background */
+  /* Ensure all elements inherit the background and handle viewport units */
   *,
   *:before,
   *:after {
     box-sizing: border-box;
+  }
+
+  /* Force full height for fixed elements */
+  .h-full {
+    min-height: 100vh !important;
+    height: auto !important;
+  }
+
+  /* Thin scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px; /* Thin width for vertical scrollbar */
+    height: 8px; /* Thin height for horizontal scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background); /* Black background to match theme */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.5); /* Semi-transparent green */
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.7); /* Slightly darker green on hover */
+  }
+
+  /* Firefox scrollbar styling */
+  * {
+    scrollbar-width: thin; /* Thin scrollbar in Firefox */
+    scrollbar-color: rgba(0, 255, 0, 0.5) var(--background); /* Green thumb, black track */
   }
 }
 
@@ -49,3 +80,17 @@
     transform: translateY(100vh);
   }
 } */
+/* Custom text selection/highlight styling */
+::selection {
+  background: var(--primary); /* Green background */
+  color: white; /* White text */
+  text-shadow: none; /* Remove any default text shadows */
+}
+
+/* Ensure text selection works in input/textarea elements */
+input::selection,
+textarea::selection {
+  background: var(--primary);
+  color: white;
+  text-shadow: none;
+}
