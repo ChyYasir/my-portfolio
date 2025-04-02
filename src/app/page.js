@@ -124,7 +124,7 @@ export default function Home() {
       title: "SKILLS",
       content: (
         <ul className="space-y-1">
-          <li>{">"} C++, Python, JS, TS, Go</li>
+          <li>{">"} C, C++, Python, JS, TS</li>
           <li>{">"} React, Node, Next.js</li>
           <li>{">"} AWS, Docker, Git</li>
           <li>{">"} System Design</li>
