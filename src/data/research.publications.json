@@ -1,0 +1,18 @@
+[
+  {
+    "id": "q1-publication",
+    "title": "Research Paper Title",
+    "authors": [
+      { "name": "Yasir Rahman", "highlight": true },
+      { "name": "Co-author Name", "highlight": false }
+    ],
+    "journal": "Journal Name",
+    "year": 2025,
+    "status": "accepted",
+    "quartile": "Q1",
+    "quartileSource": "Scimago",
+    "contribution": "Brief description of your role in the research — methodology, implementation, experiments, or manuscript writing.",
+    "keywords": ["Research Area"],
+    "featured": true
+  }
+]

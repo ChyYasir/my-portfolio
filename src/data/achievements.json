@@ -1,0 +1,47 @@
+[
+  {
+    "id": "icpc-2023",
+    "title": "ICPC Asia Dhaka Regional Contest 2022–23",
+    "rank": "42nd",
+    "team": "CUET Infinite Tsukuyomi",
+    "year": "2023",
+    "image": "/images/achievements/ICPC-23.jpg",
+    "summary": "Second ICPC regional participation at Green University, Bangladesh. Team solved four problems in a highly competitive field."
+  },
+  {
+    "id": "icpc-2022",
+    "title": "ICPC Asia Dhaka Regional Contest 2021–22",
+    "rank": "48th",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/ICPC-22.jpg",
+    "summary": "First ICPC regional. Team solved five problems; contributed a dynamic programming and number theory solution."
+  },
+  {
+    "id": "edu-iupc",
+    "title": "EDU Engineering Day Inter University Programming Contest",
+    "rank": "1st",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/EDU.jpeg",
+    "summary": "Championship win — team solved 7 of 10 problems, securing first place in the inter-university contest."
+  },
+  {
+    "id": "buet-iupc",
+    "title": "BUET Inter University Programming Contest",
+    "rank": "43rd",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/BUET(1).jpg",
+    "summary": "Competed against top university teams in one of Bangladesh's premier programming contests."
+  },
+  {
+    "id": "cuet-ijc",
+    "title": "CUET CSE Fest IUPC",
+    "rank": "10th",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/CUET_IJC.jpg",
+    "summary": "Strong performance at the CUET intra-university programming contest."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "paper-q1-accepted",
+    "date": "2025-02-01",
+    "type": "research",
+    "title": "Paper accepted in Q1 journal",
+    "summary": "Our research work was accepted for publication in a Q1-ranked peer-reviewed journal.",
+    "link": "/experience#research",
+    "tags": ["Publication", "Q1"],
+    "featured": true
+  },
+  {
+    "id": "iiuc-adjunct",
+    "date": "2024-09-01",
+    "type": "teaching",
+    "title": "Started as Adjunct Lecturer at IIUC Chittagong",
+    "summary": "Teaching CSE courses at the International Islamic University Chittagong.",
+    "link": "/experience#teaching",
+    "tags": ["IIUC", "Teaching"],
+    "featured": false
+  },
+  {
+    "id": "bevy-joined",
+    "date": "2024-07-01",
+    "type": "role",
+    "title": "Joined Bevy Commerce as Software Engineer",
+    "summary": "Building data migration tools and production systems for e-commerce platforms.",
+    "link": "/experience#engineering",
+    "tags": ["Bevy Commerce"],
+    "featured": false
+  },
+  {
+    "id": "bevy-migration",
+    "date": "2025-01-15",
+    "type": "project",
+    "title": "Shipped Magento → Shopify data migration tool",
+    "summary": "Production pipeline for bulk data transfer with rate limiting and retry logic.",
+    "link": "/projects#data-migration-tool",
+    "tags": ["Node.js", "Shopify", "GraphQL"],
+    "featured": false
+  },
+  {
+    "id": "icpc-2023",
+    "date": "2023-12-01",
+    "type": "achievement",
+    "title": "ICPC Asia Dhaka Regional 2022–23 — 42nd",
+    "summary": "Competed as CUET Infinite Tsukuyomi at Green University, Bangladesh.",
+    "link": "/achievements",
+    "tags": ["ICPC"],
+    "featured": false
+  }
+]

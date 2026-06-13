@@ -1,0 +1,54 @@
+[
+  {
+    "id": "data-migration-tool",
+    "title": "Data Migration Tool",
+    "type": "Professional",
+    "status": "Production",
+    "overview": "A data migration pipeline to transfer data from Magento to Shopify, handling bulk synchronization with rate limiting and robust error recovery.",
+    "outcome": "Reduced sync failures through improved rate limiting and retry logic for production e-commerce migrations.",
+    "technologies": ["Node.js", "Express.js", "MongoDB", "GraphQL", "Shopify", "Magento"],
+    "featured": true,
+    "images": [
+      "/images/projects/project1-1.jpeg",
+      "/images/projects/project1-2.jpeg"
+    ]
+  },
+  {
+    "id": "the-free-press",
+    "title": "The Free Press",
+    "type": "Professional",
+    "status": "Production",
+    "overview": "Online news media platform built with WordPress and React, featuring custom Gutenberg blocks and dynamic frontend components.",
+    "outcome": "Delivered a customizable, design-aligned news platform integrated with WordPress REST API.",
+    "technologies": ["WordPress", "PHP", "React.js", "MySQL", "Gutenberg"],
+    "featured": true,
+    "images": [
+      "/images/projects/project2-1.jpeg",
+      "/images/projects/project2-2.jpeg"
+    ]
+  },
+  {
+    "id": "120hertz",
+    "title": "120Hertz",
+    "type": "Professional",
+    "status": "Production",
+    "overview": "Multi-tenant blogging platform supporting multiple organizations with isolated data and role-based access control.",
+    "outcome": "Scalable SaaS-style architecture with JWT authentication and tenant isolation.",
+    "technologies": ["Node.js", "Express.js", "MongoDB", "JWT", "AWS EC2"],
+    "featured": false,
+    "images": []
+  },
+  {
+    "id": "tuition-media",
+    "title": "Tuition Media Management System",
+    "type": "Client Project",
+    "status": "Delivered",
+    "overview": "Internal management system for tuition media operations with advanced search, analytics dashboard, and role management.",
+    "outcome": "Streamlined business operations with real-time pagination and comprehensive analytics.",
+    "technologies": ["React.js", "Redux Toolkit", "Node.js", "MongoDB", "AWS EC2"],
+    "featured": false,
+    "images": [
+      "/images/projects/project1-3.jpeg"
+    ]
+  }
+]
