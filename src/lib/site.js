@@ -36,4 +36,9 @@ export const siteConfig = {
     { id: "teaching", label: "Teaching" },
     { id: "research", label: "Research" },
   ],
+  achievementTabs: [
+    { id: "icpc", label: "ICPC" },
+    { id: "iupc", label: "IUPC" },
+    { id: "hackathon", label: "Hackathon" },
+  ],
 };

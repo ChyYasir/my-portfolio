@@ -1,6 +1,7 @@
 [
   {
     "id": "icpc-2023",
+    "category": "icpc",
     "title": "ICPC Asia Dhaka Regional Contest 2022–23",
     "rank": "42nd",
     "team": "CUET Infinite Tsukuyomi",
@@ -10,6 +11,7 @@
   },
   {
     "id": "icpc-2022",
+    "category": "icpc",
     "title": "ICPC Asia Dhaka Regional Contest 2021–22",
     "rank": "48th",
     "team": "CUET AugniPaksha",
@@ -19,6 +21,7 @@
   },
   {
     "id": "edu-iupc",
+    "category": "iupc",
     "title": "EDU Engineering Day Inter University Programming Contest",
     "rank": "1st",
     "team": "CUET AugniPaksha",
@@ -28,6 +31,7 @@
   },
   {
     "id": "buet-iupc",
+    "category": "iupc",
     "title": "BUET Inter University Programming Contest",
     "rank": "43rd",
     "team": "CUET AugniPaksha",
@@ -37,6 +41,7 @@
   },
   {
     "id": "cuet-ijc",
+    "category": "iupc",
     "title": "CUET CSE Fest IUPC",
     "rank": "10th",
     "team": "CUET AugniPaksha",
