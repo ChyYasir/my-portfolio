@@ -9,7 +9,7 @@ export default function ExperienceTimeline({ items }) {
       <ul className="space-y-12">
         {items.map((item) => (
           <li key={item.id} className="relative pl-8">
-            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-accent ring-4 ring-base" />
+            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-accent ring-4 ring-canvas" />
             <div className="space-y-2">
               <p className="text-xs font-mono text-tertiary">{item.duration}</p>
               <h3 className="font-display text-xl md:text-2xl text-foreground">

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        base: "var(--bg-base)",
+        canvas: "var(--bg-base)",
         elevated: "var(--bg-elevated)",
         subtle: "var(--bg-subtle)",
         border: "var(--border-default)",
@@ -13,6 +13,7 @@ module.exports = {
         foreground: "var(--text-primary)",
         muted: "var(--text-secondary)",
         tertiary: "var(--text-tertiary)",
+        "on-accent": "#0c0c0e",
         accent: {
           DEFAULT: "var(--accent)",
           hover: "var(--accent-hover)",

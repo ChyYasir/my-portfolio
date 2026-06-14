@@ -1,62 +1,58 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
-import ExperienceTabs, {
-  useExperienceTab,
-} from "@/components/sections/ExperienceTabs";
+import ExperienceSubNav from "@/components/sections/ExperienceSubNav";
 import PublicationCard from "@/components/ui/PublicationCard";
 import engineeringData from "@/data/experience.engineering.json";
 import teachingData from "@/data/experience.teaching.json";
 import publications from "@/data/research.publications.json";
 
-export default function ExperiencePage() {
-  const [activeTab, changeTab] = useExperienceTab("engineering");
+function TrackSection({ id, title, surface, children }) {
+  const surfaceClass =
+    surface === "teaching"
+      ? "rounded-md bg-surface-teaching p-6 md:p-8"
+      : surface === "research"
+        ? "space-y-6"
+        : undefined;
 
   return (
+    <section id={id} className="scroll-mt-32">
+      <header className="mb-8 md:mb-10">
+        <h2 className="font-display text-2xl md:text-3xl text-foreground">
+          {title}
+        </h2>
+      </header>
+      <div className={surfaceClass}>{children}</div>
+    </section>
+  );
+}
+
+export default function ExperiencePage() {
+  return (
     <PageLayout>
-      <SectionHeader
-        title="Experience"
-        description="I build software and data systems at Bevy Commerce, teach as an Adjunct Lecturer at International Islamic University Chittagong, and contribute to peer-reviewed research — including a publication accepted in a Q1 journal."
-      />
+      <SectionHeader title="Experience" className="mb-8 md:mb-10" />
 
-      <ExperienceTabs activeTab={activeTab} onTabChange={changeTab} />
+      <ExperienceSubNav />
 
-      {activeTab === "engineering" && (
-        <section id="engineering" className="scroll-mt-32">
-          <p className="text-xs uppercase tracking-[0.08em] text-tertiary mb-8">
-            Engineering
-          </p>
+      <div className="space-y-20 md:space-y-28">
+        <TrackSection id="engineering" title="Engineering">
           <ExperienceTimeline items={engineeringData} />
-        </section>
-      )}
+        </TrackSection>
 
-      {activeTab === "teaching" && (
-        <section
-          id="teaching"
-          className="scroll-mt-32 rounded-md bg-surface-teaching p-6 md:p-8"
-        >
-          <p className="text-xs uppercase tracking-[0.08em] text-tertiary mb-8">
-            Teaching
-          </p>
+        <TrackSection id="teaching" title="Teaching" surface="teaching">
           <ExperienceTimeline items={teachingData} />
-        </section>
-      )}
+        </TrackSection>
 
-      {activeTab === "research" && (
-        <section id="research" className="scroll-mt-32">
-          <p className="text-xs uppercase tracking-[0.08em] text-tertiary mb-8">
-            Research
-          </p>
+        <TrackSection id="research" title="Research" surface="research">
           <div className="space-y-6">
             {publications.map((pub) => (
               <PublicationCard key={pub.id} publication={pub} />
             ))}
           </div>
-        </section>
-      )}
+        </TrackSection>
+      </div>
     </PageLayout>
   );
 }

@@ -58,11 +58,11 @@ export default function AchievementsPage() {
                 className="object-cover"
               />
               <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 text-xs font-mono bg-base/80 backdrop-blur-sm border border-border rounded-sm text-foreground">
+                <span className="px-3 py-1 text-xs font-mono bg-canvas/80 backdrop-blur-sm border border-border rounded-sm text-foreground">
                   Rank: {item.rank}
                 </span>
                 {item.team && (
-                  <span className="px-3 py-1 text-xs font-mono bg-base/80 backdrop-blur-sm border border-border rounded-sm text-muted">
+                  <span className="px-3 py-1 text-xs font-mono bg-canvas/80 backdrop-blur-sm border border-border rounded-sm text-muted">
                     {item.team}
                   </span>
                 )}

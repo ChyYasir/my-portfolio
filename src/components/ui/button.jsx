@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-accent text-base font-medium hover:bg-accent-hover transition-colors",
+    "bg-accent text-on-accent font-medium hover:bg-accent-hover transition-colors",
   ghost:
     "text-muted hover:text-foreground underline-offset-4 hover:underline transition-colors",
   outline:
