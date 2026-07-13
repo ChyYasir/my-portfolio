@@ -35,18 +35,31 @@ export default function Hero() {
             className="mt-8 space-y-5 text-lg md:text-xl text-muted leading-relaxed"
           >
             <p>
-              I&apos;m a software engineer at{" "}
+              I&apos;m a{" "}
+              <span className="font-semibold text-foreground">
+                software engineer
+              </span>{" "}
+              at{" "}
               <Link href="/experience#engineering" className={accentLink}>
                 {engineering.org}
               </Link>
               , building production data pipelines, platform integrations, and
               backend services that move real volume. Alongside that, I teach
               as an{" "}
-              <Link href="/experience#teaching" className={accentLink}>
+              <span className="font-semibold text-foreground">
                 Adjunct Lecturer
-              </Link>{" "}
-              at IIUC, covering algorithms, problem-solving, and software
-              engineering.
+              </span>{" "}
+              at the Department of Computer Science and Engineering,{" "}
+              <a
+                href="https://www.iiuc.ac.bd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={accentLink}
+              >
+                IIUC
+              </a>
+              , where I take courses on Computer Algorithms, Compiler Design,
+              and Competitive Programming.
             </p>
             <p>
               My peer-reviewed work is{" "}
