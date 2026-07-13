@@ -9,7 +9,7 @@ import ContactStrip from "@/components/sections/ContactStrip";
 
 export default function Home() {
   return (
-    <Container size="content">
+    <Container size="wide">
       <Hero />
       <Snapshot />
       <RolePillars />

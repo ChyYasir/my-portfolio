@@ -19,7 +19,7 @@ export default function Hero() {
         variants={heroStagger}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.9fr] gap-10 lg:gap-14 items-center"
+        className="grid grid-cols-1 lg:grid-cols-[1.7fr_0.85fr] gap-10 lg:gap-16 items-center"
       >
         {/* Text column */}
         <div className="order-last lg:order-first">
@@ -111,7 +111,7 @@ export default function Hero() {
           variants={heroItem}
           className="order-first lg:order-last w-full"
         >
-          <div className="relative aspect-[4/5] w-full max-w-xs sm:max-w-sm lg:max-w-none mx-auto rounded-2xl overflow-hidden border border-border bg-subtle">
+          <div className="relative aspect-[4/5] w-full max-w-xs sm:max-w-sm mx-auto lg:mx-0 lg:ml-auto lg:max-w-[380px] rounded-2xl overflow-hidden border border-border bg-subtle">
             <Image
               src="/images/profile/yasir-2.png"
               alt={siteConfig.name}
