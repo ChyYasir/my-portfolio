@@ -135,13 +135,13 @@ function SocialRow() {
 function ResumeButton() {
   return (
     <a
-      href={siteConfig.resume}
+      href={siteConfig.cv}
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-subtle hover:border-accent/40 transition-colors"
     >
       <FileText className="w-4 h-4" />
-      Résumé
+      CV
       <ArrowUpRight className="w-3.5 h-3.5 text-muted" />
     </a>
   );

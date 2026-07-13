@@ -7,15 +7,14 @@ import ExperienceSubNav from "@/components/sections/ExperienceSubNav";
 import PublicationCard from "@/components/ui/PublicationCard";
 import engineeringData from "@/data/experience.engineering.json";
 import teachingData from "@/data/experience.teaching.json";
+import researchData from "@/data/research.experience.json";
 import publications from "@/data/research.publications.json";
 
 function TrackSection({ id, title, surface, children }) {
   const surfaceClass =
     surface === "teaching"
       ? "rounded-xl bg-surface-teaching p-6 md:p-8"
-      : surface === "research"
-        ? "space-y-6"
-        : undefined;
+      : undefined;
 
   return (
     <section id={id} className="scroll-mt-28">
@@ -45,7 +44,11 @@ export default function ExperiencePage() {
           <ExperienceTimeline items={teachingData} />
         </TrackSection>
 
-        <TrackSection id="research" title="Research" surface="research">
+        <TrackSection id="research" title="Research">
+          <ExperienceTimeline items={researchData} />
+        </TrackSection>
+
+        <TrackSection id="publications" title="Publications">
           <div className="space-y-6">
             {publications.map((pub) => (
               <PublicationCard key={pub.id} publication={pub} />

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "cross-chain-security",
+    "institution": "Attack Scenarios in Cross-Chain Blockchain Interactions",
+    "role": "Ongoing Research, CUET",
+    "subtitle": "Supervised by Dr. Rahma Bintey Mufiz Mukta",
+    "duration": "2026 – Present",
+    "highlights": [
+      "Conducting a comprehensive survey and taxonomy of security vulnerabilities and attack patterns in cross-chain communication protocols (manuscript under preparation)."
+    ],
+    "technologies": ["Blockchain Security", "Cross-chain Protocols", "Survey & Taxonomy"]
+  },
+  {
+    "id": "ehg-birth-delivery",
+    "institution": "Predictive Model for Birth Delivery Mode Using EHG Signals",
+    "role": "Research Assistant (Freelance)",
+    "subtitle": "Supporting Rubana Hoque Chowdhury's PhD research",
+    "duration": "2023 – Present",
+    "highlights": [
+      "Worked as a research assistant to Rubana Hoque Chowdhury on her PhD research in an iterative loop: reviewing the supplied literature, implementing the proposed methods in code, then jointly experimenting on and refining the resulting models.",
+      "Achieved 99% accuracy for cesarean vs. vaginal delivery prediction and 94% accuracy for spontaneous vs. induced delivery classification, using machine learning and geometric feature extraction on Electrohysterogram (EHG) signals.",
+      "Re-implemented and validated methods from prior published EHG studies, and built the analysis and figures behind two of her publications and her annual PhD committee reviews.",
+      "Supplied experimental evidence throughout her PhD journey, from proposal defence through dissertation submission and final defence, and continue the collaboration on her post-PhD research (2026 to present)."
+    ],
+    "technologies": ["Python", "Scikit-learn", "Machine Learning", "EHG Signals"]
+  },
+  {
+    "id": "bengali-keyword-thesis",
+    "institution": "Bengali Keyword Extraction from Bengali Blogs (Transformer-Based Approach)",
+    "role": "Undergraduate Thesis Research, CUET",
+    "subtitle": "Supervised by Dr. Muhammad Ibrahim Khan",
+    "duration": "2024 – 2025",
+    "highlights": [
+      "Built a comprehensive Bengali blog dataset of 9,012 annotated posts and proposed a transformer-based dual-encoder architecture, achieving an 84% F1@10 score.",
+      "Ran a comparison analysis against existing keyword-extraction methods to benchmark the proposed approach."
+    ],
+    "technologies": ["Python", "PyTorch", "Transformers", "NLP"]
+  }
+]

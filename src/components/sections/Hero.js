@@ -96,12 +96,12 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href={siteConfig.resume}
+              href={siteConfig.cv}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-subtle transition-colors"
             >
-              Download résumé
+              Download CV
             </a>
           </motion.div>
 

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Yasir Rahman",
   email: "chyyasir2000@gmail.com",
-  resume: "/Resume_of_Yasir_Rahman.pdf",
+  cv: "/CV_of_Yasir.pdf",
   roles: {
     engineering: {
       title: "Software Engineer",
@@ -39,6 +39,7 @@ export const siteConfig = {
     { id: "engineering", label: "Engineering" },
     { id: "teaching", label: "Teaching" },
     { id: "research", label: "Research" },
+    { id: "publications", label: "Publications" },
   ],
   achievementTabs: [
     { id: "icpc", label: "ICPC" },

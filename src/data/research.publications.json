@@ -1,18 +1,19 @@
 [
   {
-    "id": "q1-publication",
-    "title": "Research Paper Title",
+    "id": "ehg-scoping-review",
+    "title": "Analysis of electrohysterogram signals for predicting obstetric outcome using machine learning methods: a scoping review",
     "authors": [
+      { "name": "Rubana Hoque Chowdhury", "highlight": false },
       { "name": "Yasir Rahman", "highlight": true },
-      { "name": "Co-author Name", "highlight": false }
+      { "name": "et al.", "highlight": false }
     ],
-    "journal": "Journal Name",
-    "year": 2025,
-    "status": "accepted",
+    "journal": "BMC Pregnancy and Childbirth, Springer Nature",
+    "year": 2026,
+    "status": "published",
     "quartile": "Q1",
     "quartileSource": "Scimago",
-    "contribution": "Brief description of your role in the research, such as methodology, implementation, experiments, or manuscript writing.",
-    "keywords": ["Research Area"],
+    "contribution": "Re-implemented and validated methods from prior EHG studies, and built the analysis and figures that supported this scoping review.",
+    "keywords": ["Machine Learning", "EHG Signals", "Obstetrics"],
     "featured": true
   }
 ]

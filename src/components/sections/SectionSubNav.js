@@ -66,7 +66,16 @@ export default function SectionSubNav({ tabs, defaultSection }) {
   return (
     <div className="sticky top-16 lg:top-0 z-30 bg-canvas/95 backdrop-blur-md border-b border-border -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mb-10 md:mb-14 py-4">
       <div className="w-full mx-auto">
-        <div className="grid grid-cols-3 gap-2 md:gap-3 p-1.5 rounded-lg bg-elevated border border-border">
+        <div
+          className={cn(
+            "grid gap-2 md:gap-3 p-1.5 rounded-lg bg-elevated border border-border",
+            tabs.length === 4
+              ? "grid-cols-2 sm:grid-cols-4"
+              : tabs.length === 2
+                ? "grid-cols-2"
+                : "grid-cols-3"
+          )}
+        >
           {tabs.map((tab) => {
             const isActive = activeSection === tab.id;
             return (
