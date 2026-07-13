@@ -30,8 +30,8 @@ module.exports = {
       maxWidth: {
         reading: "720px",
         content: "960px",
-        wide: "1200px",
-        site: "1440px",
+        wide: "1400px",
+        site: "1600px",
       },
       borderRadius: {
         sm: "6px",

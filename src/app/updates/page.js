@@ -29,7 +29,7 @@ export default function UpdatesPage() {
       : sorted.filter((u) => u.type === filter);
 
   return (
-    <PageLayout size="content">
+    <PageLayout>
       <SectionHeader
         title="Updates"
         description="Recent milestones across engineering, teaching, research, and competitive programming."
