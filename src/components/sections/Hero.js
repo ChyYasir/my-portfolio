@@ -25,9 +25,9 @@ export default function Hero() {
         <div className="order-last lg:order-first">
           <motion.h2
             variants={heroItem}
-            className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-foreground text-balance"
+            className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-foreground"
           >
-            Hi, I am Yasir Rahman
+            Hi, I&apos;m <span className="uppercase">Yasir Rahman</span>
           </motion.h2>
 
           <motion.div
