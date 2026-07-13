@@ -49,7 +49,11 @@ export default function Hero() {
               <span className="font-semibold text-foreground">
                 Adjunct Lecturer
               </span>{" "}
-              at the Department of Computer Science and Engineering,{" "}
+              at the{" "}
+              <span className="font-semibold text-foreground">
+                Department of Computer Science and Engineering
+              </span>
+              ,{" "}
               <a
                 href="https://www.iiuc.ac.bd/"
                 target="_blank"
