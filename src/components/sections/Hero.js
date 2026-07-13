@@ -19,18 +19,11 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.p
-          variants={heroItem}
-          className="text-sm font-medium uppercase tracking-[0.14em] text-accent mb-6"
-        >
-          Chittagong, Bangladesh
-        </motion.p>
-
         <motion.h2
           variants={heroItem}
           className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-foreground max-w-4xl text-balance"
         >
-          I build software, teach it, and publish the research behind it.
+          Hi, I am Yasir Rahman
         </motion.h2>
 
         <motion.div
