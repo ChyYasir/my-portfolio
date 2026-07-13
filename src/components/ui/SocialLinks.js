@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 /* Brand logo glyphs (24x24 viewBox). GitHub uses currentColor so it stays
    visible in both themes; the rest carry their official brand color. */
@@ -34,10 +35,18 @@ function FacebookIcon(props) {
   );
 }
 
-function TwitterIcon(props) {
+function GmailIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="#1DA1F2" aria-hidden="true" {...props}>
-      <path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 24 4.59z" />
+    <svg viewBox="0 0 24 24" fill="#EA4335" aria-hidden="true" {...props}>
+      <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-1.909V10.09L12 16.909 3.545 10.09v10.912H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 11.545l9.615-7.724h.749c.904 0 1.636.732 1.636 1.636z" />
+    </svg>
+  );
+}
+
+function XIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 }
@@ -45,31 +54,38 @@ function TwitterIcon(props) {
 const links = [
   { key: "linkedin", label: "LinkedIn", href: siteConfig.social.linkedin, Icon: LinkedInIcon },
   { key: "github", label: "GitHub", href: siteConfig.social.github, Icon: GitHubIcon },
+  { key: "gmail", label: "Email", href: siteConfig.social.email, Icon: GmailIcon },
   { key: "scholar", label: "Google Scholar", href: siteConfig.social.scholar, Icon: ScholarIcon },
   { key: "facebook", label: "Facebook", href: siteConfig.social.facebook, Icon: FacebookIcon },
-  { key: "twitter", label: "Twitter", href: siteConfig.social.twitter, Icon: TwitterIcon },
+  { key: "x", label: "X", href: siteConfig.social.twitter, Icon: XIcon },
 ];
+
+const monochrome = new Set(["github", "x"]);
 
 export default function SocialLinks({ className = "" }) {
   return (
     <div className={`flex flex-wrap items-center justify-center gap-3 ${className}`}>
-      {links.map(({ key, label, href, Icon }) => (
-        <a
-          key={key}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={label}
-          title={label}
-          className="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-border bg-elevated hover:bg-subtle hover:-translate-y-0.5 transition-all duration-200"
-        >
-          <Icon
-            className={
-              key === "github" ? "w-[22px] h-[22px] text-foreground" : "w-[22px] h-[22px]"
-            }
-          />
-        </a>
-      ))}
+      {links.map(({ key, label, href, Icon }) => {
+        const isMail = href?.startsWith("mailto:");
+        return (
+          <a
+            key={key}
+            href={href}
+            target={isMail ? undefined : "_blank"}
+            rel={isMail ? undefined : "noopener noreferrer"}
+            aria-label={label}
+            title={label}
+            className="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-border bg-elevated hover:bg-subtle hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <Icon
+              className={cn(
+                "w-[22px] h-[22px]",
+                monochrome.has(key) && "text-foreground"
+              )}
+            />
+          </a>
+        );
+      })}
     </div>
   );
 }
