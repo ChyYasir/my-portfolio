@@ -1,7 +1,6 @@
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./global.css";
-import Sidebar from "@/components/layout/Sidebar";
-import Footer from "@/components/layout/Footer";
+import AppShell from "@/components/layout/AppShell";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -47,11 +46,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans">
-        <Sidebar />
-        <div className="lg:pl-[336px]">
-          <main className="min-h-screen pt-16 lg:pt-0">{children}</main>
-          <Footer />
-        </div>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
