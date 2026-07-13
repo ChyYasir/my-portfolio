@@ -186,7 +186,7 @@ export default function AppShell({ children }) {
 
   return (
     <>
-      {/* Burger toggle — top-left on every breakpoint */}
+      {/* Burger toggle - top-left on every breakpoint */}
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Collapse sidebar" : "Open sidebar"}

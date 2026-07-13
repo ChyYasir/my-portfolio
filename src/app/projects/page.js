@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <PageLayout>
       <SectionHeader
         title="Projects"
-        description="Production systems, client work, and side projects — built with a focus on data, scale, and clean architecture."
+        description="Production systems, client work, and side projects, built with a focus on data, scale, and clean architecture."
       />
 
       <div className="space-y-12">

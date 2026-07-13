@@ -11,7 +11,7 @@
     "status": "accepted",
     "quartile": "Q1",
     "quartileSource": "Scimago",
-    "contribution": "Brief description of your role in the research — methodology, implementation, experiments, or manuscript writing.",
+    "contribution": "Brief description of your role in the research, such as methodology, implementation, experiments, or manuscript writing.",
     "keywords": ["Research Area"],
     "featured": true
   }

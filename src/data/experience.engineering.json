@@ -5,7 +5,7 @@
     "role": "Software Engineer",
     "subtitle": "Data & platform focus",
     "location": "Ontario, Canada (Remote)",
-    "duration": "July 2024 — Present",
+    "duration": "July 2024 – Present",
     "highlights": [
       "Built a data migration pipeline from Magento to Shopify using Express.js, GraphQL, and REST APIs",
       "Implemented rate-limiting with Bottleneck to comply with Shopify API constraints at scale",
@@ -19,9 +19,9 @@
     "company": "BreakByte",
     "role": "Software Engineer",
     "location": "Chittagong, Bangladesh",
-    "duration": "Dec 2023 — Jun 2024",
+    "duration": "Dec 2023 – Jun 2024",
     "highlights": [
-      "Built 120Hertz — a multi-tenant blogging platform with JWT and RBAC authentication",
+      "Built 120Hertz, a multi-tenant blogging platform with JWT and RBAC authentication",
       "Designed MongoDB schemas for proper tenant data isolation",
       "Deployed and managed services on AWS EC2 with NGINX and PM2"
     ],

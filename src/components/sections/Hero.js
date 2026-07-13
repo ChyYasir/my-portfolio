@@ -57,8 +57,8 @@ export default function Hero() {
               <Link href="/experience#research" className={accentLink}>
                 {research.badge} journal
               </Link>
-              . And I compete — three ICPC Asia regional appearances and an
-              inter-university contest{" "}
+              . I also compete in programming contests, with three ICPC Asia
+              regional appearances and an inter-university contest{" "}
               <Link href="/achievements#iupc" className={accentLink}>
                 championship
               </Link>

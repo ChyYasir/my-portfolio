@@ -45,7 +45,7 @@ export default function RolePillars() {
         Three tracks, one focus
       </h2>
       <p className="text-lg text-muted mb-10 max-w-2xl">
-        Engineering, teaching, and research — each feeding the other.
+        Engineering, teaching, and research, each feeding the other.
       </p>
 
       <motion.div

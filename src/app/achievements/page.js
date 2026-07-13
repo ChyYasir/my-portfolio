@@ -88,7 +88,7 @@ export default function AchievementsPage() {
     <PageLayout>
       <SectionHeader
         title="Achievements"
-        description="Competitive programming milestones — ICPC regionals, inter-university contests, and years of problem-solving practice."
+        description="Competitive programming milestones across ICPC regionals, inter-university contests, and years of problem-solving practice."
       />
 
       <motion.div
