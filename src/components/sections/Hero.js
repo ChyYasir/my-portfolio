@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { heroStagger, heroItem } from "@/lib/motion";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 const accentLink =
   "text-accent hover:text-accent-hover underline underline-offset-4 decoration-accent/40 hover:decoration-accent transition-colors";
@@ -128,15 +129,18 @@ export default function Hero() {
           variants={heroItem}
           className="order-first lg:order-last w-full"
         >
-          <div className="relative aspect-[4/5] w-full max-w-xs sm:max-w-sm mx-auto lg:mx-0 lg:ml-auto lg:max-w-[380px] rounded-2xl overflow-hidden border border-border bg-subtle">
-            <Image
-              src="/images/profile/yasir-2.png"
-              alt={siteConfig.name}
-              fill
-              sizes="(max-width: 1024px) 24rem, 30vw"
-              className="object-cover"
-              priority
-            />
+          <div className="w-full max-w-xs sm:max-w-sm mx-auto lg:mx-0 lg:ml-auto lg:max-w-[380px]">
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden border border-border bg-subtle">
+              <Image
+                src="/images/profile/yasir-2.png"
+                alt={siteConfig.name}
+                fill
+                sizes="(max-width: 1024px) 24rem, 30vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <SocialLinks className="mt-6" />
           </div>
         </motion.div>
       </motion.div>

@@ -23,6 +23,10 @@ export const siteConfig = {
     github: "https://github.com/ChyYasir",
     linkedin: "https://www.linkedin.com/in/yasir-rahman-chy/",
     email: "mailto:chyyasir2000@gmail.com",
+    // TODO: replace the placeholder "#" links below with your real profile URLs
+    scholar: "#",
+    facebook: "#",
+    twitter: "#",
   },
   nav: [
     { name: "Home", path: "/" },
