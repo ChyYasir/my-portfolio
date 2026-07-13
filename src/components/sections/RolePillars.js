@@ -14,7 +14,7 @@ export default function RolePillars() {
 
   const pillars = [
     {
-      overline: "Engineering",
+      overline: "Industry",
       title: eng.role,
       org: eng.company,
       meta: `${eng.location} · ${eng.duration}`,
@@ -22,7 +22,7 @@ export default function RolePillars() {
       href: "/experience#engineering",
     },
     {
-      overline: "Teaching",
+      overline: "Academia",
       title: teach.role,
       org: teach.institution,
       meta: `${teach.duration}`,

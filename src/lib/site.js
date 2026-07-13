@@ -36,8 +36,8 @@ export const siteConfig = {
     { name: "Achievements", path: "/achievements" },
   ],
   experienceTabs: [
-    { id: "engineering", label: "Engineering" },
-    { id: "teaching", label: "Teaching" },
+    { id: "engineering", label: "Industry" },
+    { id: "teaching", label: "Academia" },
     { id: "research", label: "Research" },
     { id: "publications", label: "Publications" },
   ],

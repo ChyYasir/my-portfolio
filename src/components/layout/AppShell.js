@@ -62,17 +62,48 @@ function Identity({ onNavigate }) {
 }
 
 function NavLinks({ pathname, onNavigate }) {
-  const [hash, setHash] = useState("");
+  const [activeSub, setActiveSub] = useState("");
 
   const isActive = (path) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
+  const onExperience = pathname.startsWith("/experience");
+
+  // Scroll-spy: highlight the experience sub-item for the section in view.
   useEffect(() => {
-    const update = () => setHash(window.location.hash);
-    update();
-    window.addEventListener("hashchange", update);
-    return () => window.removeEventListener("hashchange", update);
-  }, [pathname]);
+    if (!onExperience) {
+      setActiveSub("");
+      return;
+    }
+    const ids = siteConfig.experienceTabs.map((t) => t.id);
+    let observer;
+
+    const raf = requestAnimationFrame(() => {
+      const sections = ids
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      const hash = window.location.hash.replace("#", "");
+      setActiveSub(ids.includes(hash) ? hash : ids[0]);
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (visible[0]?.target.id) setActiveSub(visible[0].target.id);
+        },
+        { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 1] }
+      );
+      sections.forEach((s) => observer.observe(s));
+    });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      observer?.disconnect();
+    };
+  }, [pathname, onExperience]);
 
   return (
     <nav className="flex flex-col gap-0.5">
@@ -105,9 +136,7 @@ function NavLinks({ pathname, onNavigate }) {
             {isExperience && (
               <div className="mt-0.5 mb-1 ml-[22px] flex flex-col border-l border-border pl-3">
                 {siteConfig.experienceTabs.map((tab) => {
-                  const subActive =
-                    pathname.startsWith("/experience") &&
-                    hash === `#${tab.id}`;
+                  const subActive = onExperience && activeSub === tab.id;
                   return (
                     <Link
                       key={tab.id}

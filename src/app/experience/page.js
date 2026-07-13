@@ -36,11 +36,11 @@ export default function ExperiencePage() {
       <ExperienceSubNav />
 
       <div className="space-y-20 md:space-y-28">
-        <TrackSection id="engineering" title="Engineering">
+        <TrackSection id="engineering" title="Industry">
           <ExperienceTimeline items={engineeringData} />
         </TrackSection>
 
-        <TrackSection id="teaching" title="Teaching" surface="teaching">
+        <TrackSection id="teaching" title="Academia" surface="teaching">
           <ExperienceTimeline items={teachingData} />
         </TrackSection>
 
