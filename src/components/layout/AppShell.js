@@ -62,35 +62,71 @@ function Identity({ onNavigate }) {
 }
 
 function NavLinks({ pathname, onNavigate }) {
+  const [hash, setHash] = useState("");
+
   const isActive = (path) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
+
+  useEffect(() => {
+    const update = () => setHash(window.location.hash);
+    update();
+    window.addEventListener("hashchange", update);
+    return () => window.removeEventListener("hashchange", update);
+  }, [pathname]);
 
   return (
     <nav className="flex flex-col gap-0.5">
       {siteConfig.nav.map((item) => {
         const active = isActive(item.path);
+        const isExperience = item.path === "/experience";
         return (
-          <Link
-            key={item.path}
-            href={item.path}
-            onClick={onNavigate}
-            className={cn(
-              "group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors",
-              active
-                ? "text-foreground bg-subtle"
-                : "text-muted hover:text-foreground hover:bg-subtle/60"
-            )}
-          >
-            <span
+          <div key={item.path}>
+            <Link
+              href={item.path}
+              onClick={onNavigate}
               className={cn(
-                "mr-3 h-1.5 w-1.5 rounded-full transition-all",
+                "group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors",
                 active
-                  ? "bg-accent scale-100"
-                  : "bg-transparent scale-0 group-hover:bg-tertiary group-hover:scale-100"
+                  ? "text-foreground bg-subtle"
+                  : "text-muted hover:text-foreground hover:bg-subtle/60"
               )}
-            />
-            {item.name}
-          </Link>
+            >
+              <span
+                className={cn(
+                  "mr-3 h-1.5 w-1.5 rounded-full transition-all",
+                  active
+                    ? "bg-accent scale-100"
+                    : "bg-transparent scale-0 group-hover:bg-tertiary group-hover:scale-100"
+                )}
+              />
+              {item.name}
+            </Link>
+
+            {isExperience && (
+              <div className="mt-0.5 mb-1 ml-[22px] flex flex-col border-l border-border pl-3">
+                {siteConfig.experienceTabs.map((tab) => {
+                  const subActive =
+                    pathname.startsWith("/experience") &&
+                    hash === `#${tab.id}`;
+                  return (
+                    <Link
+                      key={tab.id}
+                      href={`/experience#${tab.id}`}
+                      onClick={onNavigate}
+                      className={cn(
+                        "py-1.5 pl-2 text-sm rounded-md transition-colors",
+                        subActive
+                          ? "text-accent font-medium"
+                          : "text-tertiary hover:text-foreground"
+                      )}
+                    >
+                      {tab.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         );
       })}
     </nav>
