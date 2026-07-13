@@ -6,7 +6,7 @@ export const siteConfig = {
     engineering: {
       title: "Software Engineer",
       org: "Bevy Commerce",
-      location: "Remote",
+      location: "Ontario, Canada (Remote)",
       duration: "July 2024 — Present",
     },
     teaching: {
