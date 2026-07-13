@@ -1,138 +1,113 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { heroStagger, heroItem } from "@/lib/motion";
 
 const accentLink =
-  "text-accent hover:text-accent-hover underline-offset-2 hover:underline transition-colors";
+  "text-accent hover:text-accent-hover underline underline-offset-4 decoration-accent/40 hover:decoration-accent transition-colors";
 
 export default function Hero() {
   const { engineering, teaching, research } = siteConfig.roles;
 
   return (
-    <section className="pt-20 pb-8 md:pt-24 md:pb-10">
-      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 lg:gap-10 items-start">
-        <aside className="flex flex-col items-center lg:items-start text-center lg:text-left">
-          <div className="relative w-44 h-44 lg:w-48 lg:h-48 shrink-0 overflow-hidden border border-border rounded-sm">
-            <Image
-              src="/images/profile/yasir-2.png"
-              alt={siteConfig.name}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+    <section className="pt-8 pb-14 md:pt-16 md:pb-20">
+      <motion.div
+        variants={heroStagger}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.p
+          variants={heroItem}
+          className="text-sm font-medium uppercase tracking-[0.14em] text-accent mb-6"
+        >
+          Chittagong, Bangladesh
+        </motion.p>
 
-          <h1 className="font-display text-3xl md:text-4xl text-foreground mt-5">
-            {siteConfig.name}
-          </h1>
+        <motion.h2
+          variants={heroItem}
+          className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-foreground max-w-4xl text-balance"
+        >
+          I build software, teach it, and publish the research behind it.
+        </motion.h2>
 
-          <p className="text-accent font-semibold text-sm mt-3">
-            {engineering.title}
+        <motion.div
+          variants={heroItem}
+          className="mt-8 space-y-5 text-lg md:text-xl text-muted leading-relaxed max-w-3xl"
+        >
+          <p>
+            I&apos;m a software engineer at{" "}
+            <Link href="/experience#engineering" className={accentLink}>
+              {engineering.org}
+            </Link>
+            , building production data pipelines, platform integrations, and
+            backend services that move real volume. Alongside that, I teach
+            as an{" "}
+            <Link href="/experience#teaching" className={accentLink}>
+              Adjunct Lecturer
+            </Link>{" "}
+            at IIUC, covering algorithms, problem-solving, and software
+            engineering.
           </p>
-          <p className="text-muted text-sm">{engineering.org}</p>
-          <p className="text-muted text-sm">{engineering.location}</p>
-
-          <p className="text-accent font-semibold text-sm mt-4">
-            {teaching.title}
-          </p>
-          <p className="text-muted text-sm">{teaching.org}</p>
-
-          <a
-            href={siteConfig.social.email}
-            className="text-muted text-sm mt-5 hover:text-accent transition-colors"
-          >
-            {siteConfig.email}
-          </a>
-
-          <div className="flex flex-col items-center lg:items-start gap-2 mt-4">
-            <a
-              href={siteConfig.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
-            >
-              <Github className="w-4 h-4 shrink-0" />
-              GitHub
-            </a>
-            <a
-              href={siteConfig.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
-            >
-              <Linkedin className="w-4 h-4 shrink-0" />
-              LinkedIn
-            </a>
-          </div>
-        </aside>
-
-        <div className="lg:pt-1 min-w-0">
-          <p className="font-display italic text-muted text-base md:text-lg mb-5">
-            Software engineer, adjunct lecturer, and published researcher.
-          </p>
-
-          <div className="space-y-4 text-sm md:text-base text-foreground leading-relaxed">
-            <p>
-              I build software and data systems at{" "}
-              <Link href="/experience#engineering" className={accentLink}>
-                {engineering.org}
-              </Link>
-              , working on production pipelines, platform integrations, and
-              scalable backend services. I also teach as an{" "}
-              <Link href="/experience#teaching" className={accentLink}>
-                Adjunct Lecturer
-              </Link>{" "}
-              at{" "}
-              <Link href="/experience#teaching" className={accentLink}>
-                {teaching.org}
-              </Link>
-              , guiding students in algorithms, problem-solving, and software
-              engineering fundamentals.
-            </p>
-            <p>
-              My research contributions include peer-reviewed work{" "}
-              <span className="text-accent">{research.status.toLowerCase()}</span>{" "}
-              in a{" "}
-              <Link href="/experience#research" className={accentLink}>
-                {research.badge} journal
-              </Link>
-              . Outside of work, I&apos;m a competitive programmer with multiple{" "}
-              <Link href="/achievements#icpc" className={accentLink}>
-                ICPC regional
-              </Link>{" "}
-              appearances and an inter-university programming contest win.
-            </p>
-          </div>
-
-          <p className="text-sm text-muted mt-5">
-            A PDF version of my CV is available{" "}
-            <a
-              href={siteConfig.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={accentLink}
-            >
-              here
-            </a>
+          <p>
+            My peer-reviewed work is{" "}
+            <span className="text-foreground font-medium">
+              {research.status.toLowerCase()}
+            </span>{" "}
+            in a{" "}
+            <Link href="/experience#research" className={accentLink}>
+              {research.badge} journal
+            </Link>
+            . And I compete — three ICPC Asia regional appearances and an
+            inter-university contest{" "}
+            <Link href="/achievements#iupc" className={accentLink}>
+              championship
+            </Link>
             .
           </p>
+        </motion.div>
 
-          <div className="mt-6 p-4 md:p-5 rounded-sm border border-accent/30 bg-accent-muted">
-            <p className="font-display text-accent font-semibold text-sm md:text-base mb-1">
-              Research · {research.badge} journal ({research.status})
+        <motion.div
+          variants={heroItem}
+          className="mt-9 flex flex-wrap items-center gap-4"
+        >
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-on-accent font-semibold hover:bg-accent-hover transition-colors"
+          >
+            View my work
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <a
+            href={siteConfig.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-subtle transition-colors"
+          >
+            Download résumé
+          </a>
+        </motion.div>
+
+        <motion.div
+          variants={heroItem}
+          className="mt-10 flex items-start gap-3 p-5 rounded-xl border border-accent/30 bg-accent-muted max-w-3xl"
+        >
+          <Sparkles className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+          <div>
+            <p className="font-display font-semibold text-foreground text-lg">
+              Research accepted in a {research.badge} journal
             </p>
-            <p className="text-sm text-muted leading-relaxed">
-              Peer-reviewed publication accepted in a top-quartile journal.{" "}
+            <p className="text-muted mt-1 leading-relaxed">
+              Peer-reviewed publication in a top-quartile journal.{" "}
               <Link href="/experience#research" className={accentLink}>
-                View publication →
+                Read the publication
               </Link>
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

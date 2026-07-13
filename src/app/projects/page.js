@@ -26,11 +26,11 @@ export default function ProjectsPage() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="scroll-mt-28 rounded-md bg-elevated border border-border overflow-hidden"
+            className="scroll-mt-28 rounded-xl bg-elevated border border-border overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {project.images?.length > 0 && (
-                <div className="relative h-56 lg:h-auto lg:min-h-[280px] bg-subtle">
+                <div className="relative h-60 lg:h-auto lg:min-h-[300px] bg-subtle">
                   <Image
                     src={project.images[0]}
                     alt={project.title}
@@ -39,19 +39,19 @@ export default function ProjectsPage() {
                   />
                 </div>
               )}
-              <div className="p-6 md:p-8">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="p-7 md:p-9">
+                <div className="flex flex-wrap gap-2 mb-4">
                   <Tag>{project.type}</Tag>
                   <Tag>{project.status}</Tag>
                 </div>
-                <h2 className="font-display text-2xl md:text-3xl text-foreground mb-3">
+                <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4 leading-tight">
                   {project.title}
                 </h2>
-                <p className="text-muted text-sm leading-relaxed mb-4">
+                <p className="text-base text-muted leading-relaxed mb-4">
                   {project.overview}
                 </p>
                 {project.outcome && (
-                  <p className="text-sm text-foreground/80 leading-relaxed mb-4 border-l-2 border-accent pl-4">
+                  <p className="text-base text-foreground leading-relaxed mb-5 border-l-2 border-accent pl-4">
                     {project.outcome}
                   </p>
                 )}

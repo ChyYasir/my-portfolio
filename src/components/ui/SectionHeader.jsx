@@ -10,21 +10,21 @@ export default function SectionHeader({
   return (
     <header
       className={cn(
-        "space-y-3 mb-12 md:mb-16",
+        "space-y-4 mb-10 md:mb-14",
         align === "center" && "text-center mx-auto max-w-reading",
         className
       )}
     >
       {overline && (
-        <p className="text-xs font-sans uppercase tracking-[0.08em] text-tertiary">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
           {overline}
         </p>
       )}
-      <h1 className="font-display text-4xl md:text-5xl leading-tight text-foreground">
+      <h1 className="font-display font-bold text-5xl md:text-6xl leading-[1.05] tracking-tight text-foreground">
         {title}
       </h1>
       {description && (
-        <p className="text-lg md:text-xl text-muted max-w-reading leading-relaxed">
+        <p className="text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
           {description}
         </p>
       )}

@@ -13,7 +13,7 @@ export default function Footer() {
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-sm text-muted hover:text-accent transition-colors"
+                className="text-base text-muted hover:text-accent transition-colors"
               >
                 {item.name}
               </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 text-sm text-tertiary">
-          © {new Date().getFullYear()} {siteConfig.name}
+          © {new Date().getFullYear()} {siteConfig.name} · Built with Next.js
         </p>
       </Container>
     </footer>

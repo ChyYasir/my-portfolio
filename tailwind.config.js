@@ -23,7 +23,7 @@ module.exports = {
         "surface-research": "var(--surface-research)",
       },
       fontFamily: {
-        display: ["var(--font-instrument-serif)", "Georgia", "serif"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },

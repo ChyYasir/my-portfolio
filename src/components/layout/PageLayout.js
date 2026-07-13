@@ -1,9 +1,9 @@
 import Container from "./Container";
 
-export default function PageLayout({ children, size = "wide" }) {
+export default function PageLayout({ children, size = "content" }) {
   return (
-    <main className="min-h-screen pt-24 pb-8">
+    <div className="pt-10 md:pt-16 pb-8">
       <Container size={size}>{children}</Container>
-    </main>
+    </div>
   );
 }

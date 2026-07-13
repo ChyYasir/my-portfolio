@@ -30,32 +30,30 @@ function AchievementCard({ item, index }) {
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ delay: index * 0.06 }}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-md bg-elevated border border-border overflow-hidden"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl bg-elevated border border-border overflow-hidden"
     >
-      <div className="relative h-56 lg:h-64 bg-subtle">
+      <div className="relative h-60 lg:h-auto lg:min-h-[280px] bg-subtle">
         <Image
           src={item.image}
           alt={item.title}
           fill
           className="object-cover"
         />
-        <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span className="px-3 py-1 text-xs font-mono bg-canvas/80 backdrop-blur-sm border border-border rounded-sm text-foreground">
-            Rank: {item.rank}
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1.5 text-sm font-bold font-display bg-accent text-on-accent rounded-lg">
+            {item.rank}
           </span>
-          {item.team && (
-            <span className="px-3 py-1 text-xs font-mono bg-canvas/80 backdrop-blur-sm border border-border rounded-sm text-muted">
-              {item.team}
-            </span>
-          )}
         </div>
       </div>
-      <div className="p-6 md:p-8 flex flex-col justify-center">
-        <p className="text-xs font-mono text-tertiary mb-2">{item.year}</p>
-        <h3 className="font-display text-xl md:text-2xl text-foreground mb-3">
+      <div className="p-7 md:p-9 flex flex-col justify-center">
+        <p className="text-sm font-mono text-tertiary mb-2">
+          {item.year}
+          {item.team && ` · ${item.team}`}
+        </p>
+        <h3 className="font-display font-semibold text-2xl md:text-3xl text-foreground mb-3 leading-tight">
           {item.title}
         </h3>
-        <p className="text-sm text-muted leading-relaxed">{item.summary}</p>
+        <p className="text-base text-muted leading-relaxed">{item.summary}</p>
       </div>
     </motion.article>
   );
@@ -63,9 +61,9 @@ function AchievementCard({ item, index }) {
 
 function AchievementSection({ id, title, items }) {
   return (
-    <section id={id} className="scroll-mt-32">
+    <section id={id} className="scroll-mt-28">
       <header className="mb-8 md:mb-10">
-        <h2 className="font-display text-2xl md:text-3xl text-foreground">
+        <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
           {title}
         </h2>
       </header>
@@ -94,7 +92,7 @@ export default function AchievementsPage() {
       />
 
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 md:mb-14 p-6 md:p-8 rounded-md bg-elevated border border-border"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 md:mb-16 p-7 md:p-9 rounded-xl bg-elevated border border-border"
         variants={staggerContainer(0.06)}
         initial="hidden"
         whileInView="visible"
@@ -102,10 +100,10 @@ export default function AchievementsPage() {
       >
         {stats.map((stat) => (
           <motion.div key={stat.label} variants={fadeUp} className="text-center">
-            <p className="font-display text-3xl text-foreground mb-1">
+            <p className="font-display font-bold text-4xl md:text-5xl text-accent mb-2 leading-none">
               {stat.value}
             </p>
-            <p className="text-sm text-muted">{stat.label}</p>
+            <p className="text-base text-muted">{stat.label}</p>
           </motion.div>
         ))}
       </motion.div>

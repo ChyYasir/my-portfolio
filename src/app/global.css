@@ -37,12 +37,22 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 17px;
   }
 
   body {
     @apply bg-canvas text-foreground font-sans antialiased;
     overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
+
+  /* Space Grotesk headings read best with weight + tight tracking */
+  .font-display {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
 
   ::selection {
     background: var(--accent-muted);

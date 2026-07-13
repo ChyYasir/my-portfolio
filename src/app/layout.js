@@ -1,18 +1,18 @@
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./global.css";
-import NavBar from "@/components/layout/NavBar";
+import Sidebar from "@/components/layout/Sidebar";
 import Footer from "@/components/layout/Footer";
 
-const instrumentSerif = Instrument_Serif({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`dark ${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`dark ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -47,9 +47,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans">
-        <NavBar />
-        {children}
-        <Footer />
+        <Sidebar />
+        <div className="lg:pl-[336px]">
+          <main className="min-h-screen pt-16 lg:pt-0">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

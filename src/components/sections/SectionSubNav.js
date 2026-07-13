@@ -64,9 +64,9 @@ export default function SectionSubNav({ tabs, defaultSection }) {
   };
 
   return (
-    <div className="sticky top-16 z-40 bg-canvas/95 backdrop-blur-md border-b border-border -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mb-10 md:mb-14 py-4">
-      <div className="w-full max-w-wide mx-auto">
-        <div className="grid grid-cols-3 gap-2 md:gap-3 p-1.5 rounded-md bg-elevated border border-border">
+    <div className="sticky top-16 lg:top-0 z-30 bg-canvas/95 backdrop-blur-md border-b border-border -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mb-10 md:mb-14 py-4">
+      <div className="w-full mx-auto">
+        <div className="grid grid-cols-3 gap-2 md:gap-3 p-1.5 rounded-lg bg-elevated border border-border">
           {tabs.map((tab) => {
             const isActive = activeSection === tab.id;
             return (
@@ -74,10 +74,10 @@ export default function SectionSubNav({ tabs, defaultSection }) {
                 key={tab.id}
                 onClick={() => scrollTo(tab.id)}
                 className={cn(
-                  "w-full py-3 md:py-4 px-2 text-sm md:text-base font-medium text-center rounded-sm border transition-colors min-h-[48px]",
+                  "w-full py-3 md:py-3.5 px-2 text-base font-medium text-center rounded-md border transition-colors min-h-[48px]",
                   isActive
                     ? "bg-accent-muted border-accent/30 text-accent"
-                    : "border-border text-muted hover:text-foreground hover:bg-subtle"
+                    : "border-transparent text-muted hover:text-foreground hover:bg-subtle"
                 )}
               >
                 {tab.label}

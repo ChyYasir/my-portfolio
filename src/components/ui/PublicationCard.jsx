@@ -19,7 +19,7 @@ export default function PublicationCard({ publication, className }) {
   return (
     <article
       className={cn(
-        "p-6 md:p-8 rounded-md bg-surface-research border border-border",
+        "p-7 md:p-9 rounded-xl bg-surface-research border border-border",
         className
       )}
     >
@@ -32,11 +32,11 @@ export default function PublicationCard({ publication, className }) {
         )}
       </div>
 
-      <h3 className="font-display text-xl md:text-2xl text-foreground leading-snug mb-3">
+      <h3 className="font-display font-semibold text-2xl md:text-3xl text-foreground leading-snug mb-3">
         {title}
       </h3>
 
-      <p className="text-sm text-muted mb-2">
+      <p className="text-base text-muted mb-2">
         {authors.map((author, i) => (
           <span key={i}>
             {i > 0 && ", "}
@@ -57,7 +57,7 @@ export default function PublicationCard({ publication, className }) {
       </p>
 
       {contribution && (
-        <p className="text-muted text-sm leading-relaxed mb-4 max-w-reading">
+        <p className="text-base text-muted leading-relaxed mb-4 max-w-2xl">
           {contribution}
         </p>
       )}

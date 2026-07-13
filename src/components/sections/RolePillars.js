@@ -31,7 +31,7 @@ export default function RolePillars() {
     },
     {
       overline: "Research",
-      title: pub.quartile ? `${pub.quartile} · ${pub.status}` : pub.status,
+      title: pub.quartile ? `${pub.quartile} Journal · ${pub.status}` : pub.status,
       org: pub.title,
       meta: `${pub.journal} · ${pub.year}`,
       description: pub.contribution,
@@ -40,9 +40,16 @@ export default function RolePillars() {
   ];
 
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-14 md:py-20 border-t border-border">
+      <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
+        Three tracks, one focus
+      </h2>
+      <p className="text-lg text-muted mb-10 max-w-2xl">
+        Engineering, teaching, and research — each feeding the other.
+      </p>
+
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
+        className="grid grid-cols-1 md:grid-cols-3 gap-5"
         variants={staggerContainer(0.08)}
         initial="hidden"
         whileInView="visible"

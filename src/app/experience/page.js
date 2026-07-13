@@ -12,15 +12,15 @@ import publications from "@/data/research.publications.json";
 function TrackSection({ id, title, surface, children }) {
   const surfaceClass =
     surface === "teaching"
-      ? "rounded-md bg-surface-teaching p-6 md:p-8"
+      ? "rounded-xl bg-surface-teaching p-6 md:p-8"
       : surface === "research"
         ? "space-y-6"
         : undefined;
 
   return (
-    <section id={id} className="scroll-mt-32">
+    <section id={id} className="scroll-mt-28">
       <header className="mb-8 md:mb-10">
-        <h2 className="font-display text-2xl md:text-3xl text-foreground">
+        <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
           {title}
         </h2>
       </header>

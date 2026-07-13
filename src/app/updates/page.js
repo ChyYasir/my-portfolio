@@ -41,7 +41,7 @@ export default function UpdatesPage() {
             key={f.id}
             onClick={() => setFilter(f.id)}
             className={cn(
-              "px-3 py-1.5 text-sm rounded-sm border transition-colors min-h-[44px]",
+              "px-4 py-2 text-base font-medium rounded-lg border transition-colors min-h-[44px]",
               filter === f.id
                 ? "bg-accent-muted border-accent/30 text-accent"
                 : "border-border text-muted hover:text-foreground hover:bg-subtle"

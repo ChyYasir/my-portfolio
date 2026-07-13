@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import updates from "@/data/updates.json";
 
 function formatDate(dateStr) {
@@ -9,28 +10,27 @@ function formatDate(dateStr) {
 }
 
 export default function LatestUpdate() {
-  const latest =
-    updates.find((u) => u.featured) || updates[0];
-
+  const latest = updates.find((u) => u.featured) || updates[0];
   if (!latest) return null;
 
   return (
-    <section className="py-16 md:py-24 border-t border-border">
-      <p className="text-xs uppercase tracking-[0.08em] text-tertiary mb-2">
-        Latest · {formatDate(latest.date)}
+    <section className="py-14 md:py-20 border-t border-border">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent mb-3">
+        Latest update · {formatDate(latest.date)}
       </p>
       <Link
         href={latest.link || "/updates"}
-        className="group block p-6 md:p-8 rounded-md bg-elevated border border-border hover:bg-subtle transition-colors"
+        className="group block p-7 md:p-9 rounded-xl bg-elevated border border-border hover:border-accent/40 transition-colors"
       >
-        <h2 className="font-display text-xl md:text-2xl text-foreground group-hover:text-accent transition-colors mb-2">
+        <h2 className="font-display font-semibold text-2xl md:text-3xl text-foreground group-hover:text-accent transition-colors mb-3">
           {latest.title}
         </h2>
-        <p className="text-muted text-sm leading-relaxed max-w-reading">
+        <p className="text-lg text-muted leading-relaxed max-w-2xl">
           {latest.summary}
         </p>
-        <span className="inline-block mt-4 text-sm text-accent">
-          Read all updates →
+        <span className="inline-flex items-center gap-1.5 mt-6 text-base text-accent">
+          Read all updates
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </span>
       </Link>
     </section>
