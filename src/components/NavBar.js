@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Menu, X, Linkedin, Facebook } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +29,6 @@ const NavBar = () => {
       href: "https://www.linkedin.com/in/yasir-rahman-chy/",
       color: "hover:text-blue-400",
       label: "LinkedIn",
-    },
-    {
-      icon: "/images/svgs/facebook.svg",
-      href: "https://www.facebook.com/profile.php?id=100042767077083",
-      color: "hover:text-cyan-400",
-      label: "Facebook",
     },
   ];
 

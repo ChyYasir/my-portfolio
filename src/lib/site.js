@@ -24,7 +24,6 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/yasir-rahman-chy/",
     email: "mailto:chyyasir2000@gmail.com",
     scholar: "https://scholar.google.com/citations?user=A751gUQAAAAJ&hl=en",
-    facebook: "https://www.facebook.com/profile.php?id=100042767077083",
     twitter: "https://x.com/yasirrahman2000",
   },
   nav: [
