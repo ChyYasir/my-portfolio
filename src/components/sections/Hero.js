@@ -100,10 +100,10 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-on-accent font-semibold hover:bg-accent-hover transition-colors"
+              href="/experience"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-white dark:text-black font-semibold hover:bg-accent-hover transition-colors"
             >
-              View my work
+              View my Experience
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
