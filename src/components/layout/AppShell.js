@@ -52,11 +52,6 @@ function Identity({ onNavigate }) {
           </span>
         ))}
       </div>
-
-      <p className="text-sm text-tertiary mt-3 leading-relaxed">
-        Building data systems at Bevy Commerce. Teaching CSE at IIUC.
-        Published in a Q1 journal.
-      </p>
     </div>
   );
 }
