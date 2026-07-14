@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { heroStagger, heroItem } from "@/lib/motion";
 import SocialLinks from "@/components/ui/SocialLinks";
@@ -116,23 +116,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            variants={heroItem}
-            className="mt-10 flex items-start gap-3 p-5 rounded-xl border border-accent/30 bg-accent-muted"
-          >
-            <Sparkles className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <div>
-              <p className="font-display font-semibold text-foreground text-lg">
-                Research accepted in a {research.badge} journal
-              </p>
-              <p className="text-muted mt-1 leading-relaxed">
-                Peer-reviewed publication in a top-quartile journal.{" "}
-                <Link href="/experience#research" className={accentLink}>
-                  Read the publication
-                </Link>
-              </p>
-            </div>
-          </motion.div>
         </div>
 
         {/* Image column */}
