@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import Container from "./Container";
 
@@ -19,38 +18,10 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
-
-          <div className="flex items-center gap-4">
-            <a
-              href={siteConfig.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href={siteConfig.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted hover:text-foreground transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href={siteConfig.social.email}
-              className="text-muted hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-          </div>
         </div>
 
         <p className="mt-8 text-sm text-tertiary">
-          © {new Date().getFullYear()} {siteConfig.name} · Built with Next.js
+          © {new Date().getFullYear()} {siteConfig.name}
         </p>
       </Container>
     </footer>
