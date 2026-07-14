@@ -12,11 +12,16 @@
   },
   {
     "id": "ehg-birth-delivery",
-    "institution": "Predictive Model for Birth Delivery Mode Using EHG Signals",
+    "institution": "Predictive Model for Birth Delivery Mode",
     "role": "Research Assistant (Freelance)",
     "subtitle": "Supporting Rubana Hoque Chowdhury's PhD research",
     "duration": "2023 – Present",
     "highlights": [
+      {
+        "text": "View my work for this research on GitHub:",
+        "linkLabel": "github.com/ChyYasir/BioSignal_Detection",
+        "href": "https://github.com/ChyYasir/BioSignal_Detection"
+      },
       "Worked as a research assistant to Rubana Hoque Chowdhury on her PhD research in an iterative loop: reviewing the supplied literature, implementing the proposed methods in code, then jointly experimenting on and refining the resulting models.",
       "Achieved 99% accuracy for cesarean vs. vaginal delivery prediction and 94% accuracy for spontaneous vs. induced delivery classification, using machine learning and geometric feature extraction on Electrohysterogram (EHG) signals.",
       "Re-implemented and validated methods from prior published EHG studies, and built the analysis and figures behind two of her publications and her annual PhD committee reviews.",
