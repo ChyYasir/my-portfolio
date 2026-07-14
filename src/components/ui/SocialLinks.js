@@ -51,7 +51,7 @@ function XIcon(props) {
   );
 }
 
-const links = [
+export const socialLinks = [
   { key: "linkedin", label: "LinkedIn", href: siteConfig.social.linkedin, Icon: LinkedInIcon },
   { key: "github", label: "GitHub", href: siteConfig.social.github, Icon: GitHubIcon },
   { key: "gmail", label: "Email", href: siteConfig.social.email, Icon: GmailIcon },
@@ -60,12 +60,12 @@ const links = [
   { key: "x", label: "X", href: siteConfig.social.twitter, Icon: XIcon },
 ];
 
-const monochrome = new Set(["github", "x"]);
+export const monochromeSocials = new Set(["github", "x"]);
 
 export default function SocialLinks({ className = "" }) {
   return (
     <div className={`flex flex-wrap items-center justify-center gap-3 ${className}`}>
-      {links.map(({ key, label, href, Icon }) => {
+      {socialLinks.map(({ key, label, href, Icon }) => {
         const isMail = href?.startsWith("mailto:");
         return (
           <a
@@ -80,7 +80,7 @@ export default function SocialLinks({ className = "" }) {
             <Icon
               className={cn(
                 "w-[22px] h-[22px]",
-                monochrome.has(key) && "text-foreground"
+                monochromeSocials.has(key) && "text-foreground"
               )}
             />
           </a>

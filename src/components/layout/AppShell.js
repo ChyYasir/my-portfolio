@@ -5,16 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Menu,
-  X,
-  Github,
-  Linkedin,
-  Mail,
-  FileText,
-  ArrowUpRight,
-} from "lucide-react";
+import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { socialLinks, monochromeSocials } from "@/components/ui/SocialLinks";
 import ThemeToggle from "./ThemeToggle";
 import Footer from "./Footer";
 import { cn } from "@/lib/utils";
@@ -159,32 +152,28 @@ function NavLinks({ pathname, onNavigate }) {
 
 function SocialRow() {
   return (
-    <div className="flex items-center gap-1">
-      <a
-        href={siteConfig.social.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-subtle transition-colors"
-        aria-label="GitHub"
-      >
-        <Github className="w-[18px] h-[18px]" />
-      </a>
-      <a
-        href={siteConfig.social.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-subtle transition-colors"
-        aria-label="LinkedIn"
-      >
-        <Linkedin className="w-[18px] h-[18px]" />
-      </a>
-      <a
-        href={siteConfig.social.email}
-        className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-subtle transition-colors"
-        aria-label="Email"
-      >
-        <Mail className="w-[18px] h-[18px]" />
-      </a>
+    <div className="flex items-center gap-0.5">
+      {socialLinks.map(({ key, label, href, Icon }) => {
+        const isMail = href?.startsWith("mailto:");
+        return (
+          <a
+            key={key}
+            href={href}
+            target={isMail ? undefined : "_blank"}
+            rel={isMail ? undefined : "noopener noreferrer"}
+            aria-label={label}
+            title={label}
+            className="p-2 rounded-lg hover:bg-subtle transition-colors"
+          >
+            <Icon
+              className={cn(
+                "w-[18px] h-[18px]",
+                monochromeSocials.has(key) && "text-muted"
+              )}
+            />
+          </a>
+        );
+      })}
       <div className="ml-auto">
         <ThemeToggle />
       </div>
