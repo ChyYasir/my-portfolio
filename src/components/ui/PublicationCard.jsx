@@ -2,6 +2,32 @@ import Badge from "./Badge";
 import Tag from "./Tag";
 import { cn } from "@/lib/utils";
 
+// Split text on URLs (with or without a scheme) and render each URL as a link.
+function linkify(text) {
+  const parts = text.split(/(\bhttps?:\/\/[^\s]+|\b(?:www\.|github\.com\/)[^\s]+)/gi);
+  return parts.map((part, i) => {
+    if (/^(https?:\/\/|www\.|github\.com\/)/i.test(part)) {
+      const clean = part.replace(/[.,);]+$/, "");
+      const trailing = part.slice(clean.length);
+      const href = clean.startsWith("http") ? clean : `https://${clean}`;
+      return (
+        <span key={i}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-4"
+          >
+            {clean}
+          </a>
+          {trailing}
+        </span>
+      );
+    }
+    return part;
+  });
+}
+
 export default function PublicationCard({ publication, className }) {
   const {
     title,
@@ -14,6 +40,7 @@ export default function PublicationCard({ publication, className }) {
     keywords = [],
     doi,
     pdfUrl,
+    codeUrl,
   } = publication;
 
   return (
@@ -58,7 +85,7 @@ export default function PublicationCard({ publication, className }) {
 
       {contribution && (
         <p className="text-base text-muted leading-relaxed mb-4 max-w-2xl">
-          {contribution}
+          {linkify(contribution)}
         </p>
       )}
 
@@ -89,6 +116,16 @@ export default function PublicationCard({ publication, className }) {
             className="text-accent hover:text-accent-hover underline underline-offset-4"
           >
             PDF ↗
+          </a>
+        )}
+        {codeUrl && (
+          <a
+            href={codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-4"
+          >
+            Code on GitHub ↗
           </a>
         )}
       </div>

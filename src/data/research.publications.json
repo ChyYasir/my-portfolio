@@ -12,8 +12,10 @@
     "status": "published",
     "quartile": "Q1",
     "quartileSource": "Scimago",
-    "contribution": "Re-implemented and validated methods from prior EHG studies, and built the analysis and figures that supported this scoping review.",
+    "contribution": "I have been working with Dr. Rubana Hoque Chowdhury since 2023, and this publication is a direct result of that collaboration. My work throughout, including signal processing, method re-implementation, and analysis, is available on GitHub at github.com/ChyYasir/BioSignal_Detection.",
     "keywords": ["Machine Learning", "EHG Signals", "Obstetrics"],
+    "doi": "10.1186/s12884-026-09491-6",
+    "codeUrl": "https://github.com/ChyYasir/BioSignal_Detection",
     "featured": true
   }
 ]
