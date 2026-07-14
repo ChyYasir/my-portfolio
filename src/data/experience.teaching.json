@@ -11,17 +11,5 @@
       "Develop course materials and assessments aligned with departmental curriculum",
       "Guide students in algorithms, problem-solving, and software engineering fundamentals"
     ]
-  },
-  {
-    "id": "cuet-dsa-mentor",
-    "institution": "Chittagong University of Engineering & Technology (CUET)",
-    "role": "Peer Mentor, Data Structures & Algorithms",
-    "subject": "Algorithms, Graph Theory, Dynamic Programming",
-    "duration": "Jan 2022 – Dec 2023",
-    "location": "Chittagong, Bangladesh",
-    "highlights": [
-      "Mentored juniors for ICPC regional contest preparation",
-      "Designed weekly problem sets aligned with regional contest difficulty"
-    ]
   }
 ]
