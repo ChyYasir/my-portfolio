@@ -1,22 +1,72 @@
 [
   {
-    "id": "paper-q1-accepted",
-    "date": "2025-02-01",
+    "id": "paper-published",
+    "date": "2026-07-01",
     "type": "research",
-    "title": "Paper accepted in Q1 journal",
-    "summary": "Our research work was accepted for publication in a Q1-ranked peer-reviewed journal.",
+    "title": "Paper published in Q1 journal",
+    "summary": "Our EHG signal analysis paper was published in BMC Pregnancy and Childbirth (Springer Nature), a Q1-ranked journal.",
     "link": "/experience#research",
     "tags": ["Publication", "Q1"],
     "featured": true
   },
   {
     "id": "iiuc-adjunct",
-    "date": "2024-09-01",
+    "date": "2026-02-01",
     "type": "teaching",
-    "title": "Started as Adjunct Lecturer at IIUC Chittagong",
-    "summary": "Teaching CSE courses at the International Islamic University Chittagong.",
+    "title": "Started as Adjunct Lecturer at IIUC",
+    "summary": "Joined the Department of Computer Science and Engineering, IIUC, teaching Algorithms, Compiler Design, and Competitive Programming.",
     "link": "/experience#teaching",
     "tags": ["IIUC", "Teaching"],
+    "featured": false
+  },
+  {
+    "id": "cross-chain-research",
+    "date": "2026-01-01",
+    "type": "research",
+    "title": "Started cross-chain blockchain security research at CUET",
+    "summary": "Began an ongoing survey and taxonomy of security vulnerabilities in cross-chain communication protocols, supervised by Dr. Rahma Bintey Mufiz Mukta.",
+    "link": "/experience#research",
+    "tags": ["Research", "Blockchain"],
+    "featured": false
+  },
+  {
+    "id": "cuet-graduation",
+    "date": "2025-08-01",
+    "type": "education",
+    "title": "Graduated in CSE from CUET",
+    "summary": "Completed a BSc in Computer Science and Engineering with a CGPA of 3.53/4.00 and merit scholarships in all 8 semesters.",
+    "link": "/experience",
+    "tags": ["CUET"],
+    "featured": false
+  },
+  {
+    "id": "bengali-thesis",
+    "date": "2025-05-01",
+    "type": "research",
+    "title": "Completed undergraduate thesis on Bengali keyword extraction",
+    "summary": "Built a 9,012-post Bengali blog dataset and a transformer-based dual-encoder model reaching 84% F1@10, supervised by Dr. Muhammad Ibrahim Khan.",
+    "link": "/experience#research",
+    "tags": ["NLP", "Thesis"],
+    "featured": false
+  },
+  {
+    "id": "bevy-migration",
+    "date": "2025-01-15",
+    "type": "project",
+    "title": "Shipped Magento to Shopify data migration tool",
+    "summary": "Built a production pipeline to move over 5 million data points between e-commerce platforms using Shopify GraphQL mutations.",
+    "link": "/projects#data-migration-tool",
+    "tags": ["Node.js", "Shopify", "GraphQL"],
+    "featured": false
+  },
+  {
+    "id": "rilo-ems",
+    "date": "2025-01-01",
+    "type": "project",
+    "title": "Shipped Rilo EMS employee management system",
+    "summary": "Led an 8-member team to build a full-featured employee management system in Next.js and TypeScript.",
+    "link": "/projects",
+    "tags": ["Next.js", "TypeScript"],
     "featured": false
   },
   {
@@ -24,28 +74,78 @@
     "date": "2024-07-01",
     "type": "role",
     "title": "Joined Bevy Commerce as Software Engineer",
-    "summary": "Building data migration tools and production systems for e-commerce platforms.",
+    "summary": "Building backend services and data pipelines for e-commerce platforms serving over 500,000 daily active users.",
     "link": "/experience#engineering",
     "tags": ["Bevy Commerce"],
     "featured": false
   },
   {
-    "id": "bevy-migration",
-    "date": "2025-01-15",
+    "id": "easy-tuition",
+    "date": "2024-06-01",
     "type": "project",
-    "title": "Shipped Magento → Shopify data migration tool",
-    "summary": "Production pipeline for bulk data transfer with rate limiting and retry logic.",
-    "link": "/projects#data-migration-tool",
-    "tags": ["Node.js", "Shopify", "GraphQL"],
+    "title": "Launched Easy Tuition management system",
+    "summary": "Built a MERN-stack tuition management dashboard with a tutor-matching algorithm across 10,000+ student and tutor records.",
+    "link": "/projects",
+    "tags": ["MERN", "MongoDB"],
+    "featured": false
+  },
+  {
+    "id": "buet-hackathon-2024",
+    "date": "2024-03-01",
+    "type": "achievement",
+    "title": "Top 16 at BUET CSE Fest 2024 Hackathon",
+    "summary": "Finished among the top 16 teams in the national hackathon at BUET CSE Fest 2024.",
+    "link": "/achievements#hackathon",
+    "tags": ["Hackathon"],
+    "featured": false
+  },
+  {
+    "id": "breakbyte-joined",
+    "date": "2023-12-01",
+    "type": "role",
+    "title": "Joined BreakByte as Software Engineer",
+    "summary": "Built secure authentication and a scalable multi-tenant blogging platform deployed on AWS EC2/S3.",
+    "link": "/experience#engineering",
+    "tags": ["BreakByte"],
     "featured": false
   },
   {
     "id": "icpc-2023",
-    "date": "2023-12-01",
+    "date": "2023-02-01",
     "type": "achievement",
-    "title": "ICPC Dhaka Regional 2022–23 (41st)",
-    "summary": "Competed as CUET Infinite Tsukuyomi at Green University, Bangladesh.",
-    "link": "/achievements",
+    "title": "41st at ICPC Dhaka Regional 2022–23",
+    "summary": "Competed as CUET Infinite Tsukuyomi at the ICPC Asia West Continent Dhaka Regional.",
+    "link": "/achievements#icpc",
+    "tags": ["ICPC"],
+    "featured": false
+  },
+  {
+    "id": "ehg-research-start",
+    "date": "2023-01-01",
+    "type": "research",
+    "title": "Started research assistantship with Dr. Rubana Hoque Chowdhury",
+    "summary": "Began contributing to PhD research on predictive models for birth delivery mode using EHG signals.",
+    "link": "/experience#research",
+    "tags": ["Research", "EHG"],
+    "featured": false
+  },
+  {
+    "id": "edu-champion-2022",
+    "date": "2022-05-01",
+    "type": "achievement",
+    "title": "Champion at East Delta Engineering Day Programming Contest 2022",
+    "summary": "Won first place among the participating university teams as CUET AugniPaksha.",
+    "link": "/achievements#iupc",
+    "tags": ["IUPC", "Champion"],
+    "featured": false
+  },
+  {
+    "id": "icpc-2022",
+    "date": "2022-04-01",
+    "type": "achievement",
+    "title": "48th at ICPC Dhaka Regional 2021–22",
+    "summary": "First ICPC regional appearance, competing as CUET AugniPaksha.",
+    "link": "/achievements#icpc",
     "tags": ["ICPC"],
     "featured": false
   }

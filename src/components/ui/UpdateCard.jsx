@@ -8,6 +8,7 @@ const typeLabels = {
   teaching: "Teaching",
   research: "Research",
   achievement: "Achievement",
+  education: "Education",
   learning: "Learning",
   speaking: "Speaking",
 };

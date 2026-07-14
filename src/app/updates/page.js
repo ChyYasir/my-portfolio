@@ -14,6 +14,7 @@ const filters = [
   { id: "research", label: "Research" },
   { id: "project", label: "Projects" },
   { id: "achievement", label: "Achievements" },
+  { id: "education", label: "Education" },
 ];
 
 export default function UpdatesPage() {
