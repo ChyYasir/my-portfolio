@@ -1,27 +1,52 @@
-"use client";
-import "@/app/global.css";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
-import NetworkBackground from "@/components/NetworkBackground";
-import { Terminal, Shield, Cpu, Database, Code, Server } from "lucide-react";
-import MatrixRain from "@/components/MatrixRain";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import "./global.css";
+import AppShell from "@/components/layout/AppShell";
 
-// export const metadata = {
-//   title: "Yasir Rahman",
-//   description:
-//     "Yasir Rahman - Tech Enthusiast. Solving life's challenges through code.",
-// };
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+export const metadata = {
+  title: {
+    default: "Yasir Rahman",
+    template: "%s · Yasir Rahman",
+  },
+  description:
+    "Software engineer, adjunct lecturer at IIUC Chittagong, and published researcher. Building data systems, teaching, and research.",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <NavBar />
-
-        {children}
-
-        <Footer />
+    <html
+      lang="en"
+      className={`dark ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.remove('dark');else document.documentElement.classList.add('dark');}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className="font-sans">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

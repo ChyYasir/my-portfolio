@@ -1,60 +1,45 @@
 /** @type {import('tailwindcss').Config} */
-
-const fontFamily = require("tailwindcss/defaultTheme");
 module.exports = {
-  content: [
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  darkMode: ["class", "class"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        mont: ["var(--font-mont)"],
-      },
       colors: {
-        dark: "#0d1117",
-        light: "#f0f6fc",
-        primary: "#58a6ff",
-        secondary: "#c9d1d9",
-        primaryDark: "#28affc",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
+        canvas: "var(--bg-base)",
+        elevated: "var(--bg-elevated)",
+        subtle: "var(--bg-subtle)",
+        border: "var(--border-default)",
+        "border-muted": "var(--border-muted)",
+        foreground: "var(--text-primary)",
+        muted: "var(--text-secondary)",
+        tertiary: "var(--text-tertiary)",
+        "on-accent": "#0c0c0e",
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
+          muted: "var(--accent-muted)",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          1: "hsl(var(--chart-1))",
-          2: "hsl(var(--chart-2))",
-          3: "hsl(var(--chart-3))",
-          4: "hsl(var(--chart-4))",
-          5: "hsl(var(--chart-5))",
-        },
+        "surface-teaching": "var(--surface-teaching)",
+        "surface-research": "var(--surface-research)",
+      },
+      fontFamily: {
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
+      },
+      maxWidth: {
+        reading: "720px",
+        content: "960px",
+        wide: "1400px",
+        site: "1600px",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "6px",
+        md: "12px",
+        lg: "16px",
+      },
+      transitionTimingFunction: {
+        out: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
     },
   },

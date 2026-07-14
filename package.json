@@ -2,8 +2,11 @@
   "name": "developer-portfolio-starter-code",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3004",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

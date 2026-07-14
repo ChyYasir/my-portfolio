@@ -1,0 +1,32 @@
+[
+  {
+    "id": "iiuc-adjunct",
+    "institution": "International Islamic University Chittagong (IIUC)",
+    "role": "Adjunct Lecturer, Department of Computer Science and Engineering",
+    "subject": "Computer Science & Engineering",
+    "duration": "Feb 2026 – Present",
+    "location": "Chittagong, Bangladesh",
+    "highlights": [
+      {
+        "text": "Developed a course content website for teaching, with dedicated material for each of the courses taught",
+        "linkLabel": "Visit the site",
+        "href": "https://yasir-explains.vercel.app/"
+      },
+      {
+        "text": "You can check feedback from students and faculties on the website",
+        "linkLabel": "yasir-explains.vercel.app",
+        "href": "https://yasir-explains.vercel.app/"
+      }
+    ],
+    "courses": {
+      "term": "Spring 2026",
+      "items": [
+        { "code": "CSE-2421", "name": "Computer Algorithms" },
+        { "code": "CSE-2422", "name": "Computer Algorithms Lab" },
+        { "code": "CSE-2430", "name": "Competitive Programming II" },
+        { "code": "CSE-3527", "name": "Compiler" },
+        { "code": "CSE-3528", "name": "Compiler Lab" }
+      ]
+    }
+  }
+]

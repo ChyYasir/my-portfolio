@@ -1,0 +1,30 @@
+[
+  {
+    "id": "bevy-commerce",
+    "company": "Bevy Commerce",
+    "role": "Software Engineer",
+    "subtitle": "Data & platform focus",
+    "location": "Ontario, Canada (Remote)",
+    "duration": "July 2024 – Present",
+    "highlights": [
+      "Built a data migration pipeline from Magento to Shopify using Express.js, GraphQL, and REST APIs",
+      "Implemented rate-limiting with Bottleneck to comply with Shopify API constraints at scale",
+      "Developed custom WordPress and React integrations for The Free Press news platform",
+      "Designed robust error-handling and logging for production data synchronization"
+    ],
+    "technologies": ["Node.js", "Express.js", "MongoDB", "GraphQL", "Shopify", "WordPress", "React"]
+  },
+  {
+    "id": "breakbyte",
+    "company": "BreakByte",
+    "role": "Software Engineer",
+    "location": "Chittagong, Bangladesh",
+    "duration": "Dec 2023 – Jun 2024",
+    "highlights": [
+      "Built 120Hertz, a multi-tenant blogging platform with JWT and RBAC authentication",
+      "Designed MongoDB schemas for proper tenant data isolation",
+      "Deployed and managed services on AWS EC2 with NGINX and PM2"
+    ],
+    "technologies": ["Node.js", "Express.js", "MongoDB", "JWT", "AWS EC2", "NGINX"]
+  }
+]

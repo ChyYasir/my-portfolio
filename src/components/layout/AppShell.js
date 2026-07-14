@@ -1,0 +1,295 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
+import { siteConfig } from "@/lib/site";
+import { socialLinks, monochromeSocials } from "@/components/ui/SocialLinks";
+import ThemeToggle from "./ThemeToggle";
+import Footer from "./Footer";
+import { cn } from "@/lib/utils";
+
+const roles = ["Software Engineer", "Adjunct Lecturer", "Researcher"];
+
+function Identity({ onNavigate }) {
+  return (
+    <div>
+      <Link href="/" onClick={onNavigate} className="inline-block group">
+        <div className="relative w-24 h-24 overflow-hidden rounded-2xl border border-border">
+          <Image
+            src="/images/profile/yasir-2.png"
+            alt={siteConfig.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
+        </div>
+      </Link>
+
+      <Link href="/" onClick={onNavigate}>
+        <h1 className="font-display font-bold text-3xl text-foreground mt-5 leading-tight tracking-tight hover:text-accent transition-colors">
+          {siteConfig.name}
+        </h1>
+      </Link>
+
+      <div className="flex flex-wrap gap-1.5 mt-3">
+        {roles.map((role) => (
+          <span key={role} className="text-[13px] font-medium text-muted">
+            {role}
+            {role !== roles[roles.length - 1] && (
+              <span className="text-tertiary ml-1.5">·</span>
+            )}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NavLinks({ pathname, onNavigate }) {
+  const [activeSub, setActiveSub] = useState("");
+
+  const isActive = (path) =>
+    path === "/" ? pathname === "/" : pathname.startsWith(path);
+
+  const onExperience = pathname.startsWith("/experience");
+
+  // Scroll-spy: highlight the experience sub-item for the section in view.
+  useEffect(() => {
+    if (!onExperience) {
+      setActiveSub("");
+      return;
+    }
+    const ids = siteConfig.experienceTabs.map((t) => t.id);
+    let observer;
+
+    const raf = requestAnimationFrame(() => {
+      const sections = ids
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      const hash = window.location.hash.replace("#", "");
+      setActiveSub(ids.includes(hash) ? hash : ids[0]);
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (visible[0]?.target.id) setActiveSub(visible[0].target.id);
+        },
+        { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 1] }
+      );
+      sections.forEach((s) => observer.observe(s));
+    });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      observer?.disconnect();
+    };
+  }, [pathname, onExperience]);
+
+  return (
+    <nav className="flex flex-col gap-0.5">
+      {siteConfig.nav.map((item) => {
+        const active = isActive(item.path);
+        const isExperience = item.path === "/experience";
+        return (
+          <div key={item.path}>
+            <Link
+              href={item.path}
+              onClick={onNavigate}
+              className={cn(
+                "group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors",
+                active
+                  ? "text-foreground bg-subtle"
+                  : "text-muted hover:text-foreground hover:bg-subtle/60"
+              )}
+            >
+              <span
+                className={cn(
+                  "mr-3 h-1.5 w-1.5 rounded-full transition-all",
+                  active
+                    ? "bg-accent scale-100"
+                    : "bg-transparent scale-0 group-hover:bg-tertiary group-hover:scale-100"
+                )}
+              />
+              {item.name}
+            </Link>
+
+            {isExperience && (
+              <div className="mt-0.5 mb-1 ml-[22px] flex flex-col border-l border-border pl-3">
+                {siteConfig.experienceTabs.map((tab) => {
+                  const subActive = onExperience && activeSub === tab.id;
+                  return (
+                    <Link
+                      key={tab.id}
+                      href={`/experience#${tab.id}`}
+                      onClick={onNavigate}
+                      className={cn(
+                        "py-1.5 pl-2 text-sm rounded-md transition-colors",
+                        subActive
+                          ? "text-accent font-medium"
+                          : "text-tertiary hover:text-foreground"
+                      )}
+                    >
+                      {tab.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </nav>
+  );
+}
+
+function SocialRow() {
+  return (
+    <div className="flex items-center gap-0.5">
+      {socialLinks.map(({ key, label, href, Icon }) => {
+        const isMail = href?.startsWith("mailto:");
+        return (
+          <a
+            key={key}
+            href={href}
+            target={isMail ? undefined : "_blank"}
+            rel={isMail ? undefined : "noopener noreferrer"}
+            aria-label={label}
+            title={label}
+            className="p-2 rounded-lg hover:bg-subtle transition-colors"
+          >
+            <Icon
+              className={cn(
+                "w-[18px] h-[18px]",
+                monochromeSocials.has(key) && "text-muted"
+              )}
+            />
+          </a>
+        );
+      })}
+      <div className="ml-auto">
+        <ThemeToggle />
+      </div>
+    </div>
+  );
+}
+
+function ResumeButton() {
+  return (
+    <a
+      href={siteConfig.cv}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-subtle hover:border-accent/40 transition-colors"
+    >
+      <FileText className="w-4 h-4" />
+      CV
+      <ArrowUpRight className="w-3.5 h-3.5 text-muted" />
+    </a>
+  );
+}
+
+export default function AppShell({ children }) {
+  // null = not yet mounted (fall back to CSS responsive default)
+  const [open, setOpen] = useState(null);
+  const pathname = usePathname();
+
+  const isMobile = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 1023px)").matches;
+
+  // On mount, open by default on desktop and closed on mobile.
+  useEffect(() => {
+    setOpen(!isMobile());
+  }, []);
+
+  // Lock body scroll while the sidebar overlays content on mobile.
+  useEffect(() => {
+    const lock = open && isMobile();
+    document.body.style.overflow = lock ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const closeOnMobile = () => {
+    if (isMobile()) setOpen(false);
+  };
+
+  const panelTransform =
+    open === null
+      ? "-translate-x-full lg:translate-x-0"
+      : open
+        ? "translate-x-0"
+        : "-translate-x-full";
+
+  const contentPad =
+    open === null || open ? "lg:pl-[336px]" : "lg:pl-0";
+
+  return (
+    <>
+      {/* Burger toggle - top-left on every breakpoint */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-label={open ? "Collapse sidebar" : "Open sidebar"}
+        aria-expanded={!!open}
+        className="fixed top-4 left-4 z-[70] p-2.5 rounded-lg border border-border bg-elevated/90 backdrop-blur-md text-foreground hover:bg-subtle transition-colors"
+      >
+        {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+      </button>
+
+      {/* Backdrop (mobile only, when open) */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar panel */}
+      <aside
+        className={cn(
+          "fixed top-0 left-0 z-50 h-screen w-[336px] max-w-[85vw]",
+          "flex flex-col border-r border-border bg-elevated",
+          "px-8 pt-16 pb-10 overflow-y-auto",
+          "transition-transform duration-300 ease-out",
+          panelTransform
+        )}
+      >
+        <Identity onNavigate={closeOnMobile} />
+
+        <div className="mt-10 -mx-3">
+          <NavLinks pathname={pathname} onNavigate={closeOnMobile} />
+        </div>
+
+        <div className="mt-auto pt-10 space-y-4">
+          <ResumeButton />
+          <SocialRow />
+          <p className="text-xs text-tertiary pt-2">
+            © {new Date().getFullYear()} {siteConfig.name}
+          </p>
+        </div>
+      </aside>
+
+      {/* Main content */}
+      <div
+        className={cn("transition-[padding] duration-300 ease-out", contentPad)}
+      >
+        <main className="pt-16">{children}</main>
+        <Footer />
+      </div>
+    </>
+  );
+}

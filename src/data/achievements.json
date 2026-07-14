@@ -1,0 +1,93 @@
+[
+  {
+    "id": "icpc-2023",
+    "category": "icpc",
+    "title": "ICPC Dhaka Regional 2022–23",
+    "rank": "41st",
+    "team": "CUET Infinite Tsukuyomi",
+    "year": "2023",
+    "image": "/images/achievements/ICPC-23.jpg",
+    "summary": "Ranked 41st at the ICPC Asia West Continent Dhaka Regional, my second regional appearance."
+  },
+  {
+    "id": "icpc-2022",
+    "category": "icpc",
+    "title": "ICPC Dhaka Regional 2021–22",
+    "rank": "48th",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/ICPC-22.jpg",
+    "summary": "Ranked 48th at the ICPC Asia West Continent Dhaka Regional, my first regional appearance."
+  },
+  {
+    "id": "edu-iupc",
+    "category": "iupc",
+    "title": "East Delta Engineering Day Programming Contest 2022",
+    "rank": "1st",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/EDU.jpeg",
+    "summary": "Won first place among the participating university teams."
+  },
+  {
+    "id": "cuet-iupc",
+    "category": "iupc",
+    "title": "CUET Inter University Programming Contest 2022",
+    "rank": "10th",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/CUET_IJC.jpg",
+    "summary": "Ranked 10th among competing university teams."
+  },
+  {
+    "id": "buet-iupc",
+    "category": "iupc",
+    "title": "BUET Inter University Programming Contest 2022",
+    "rank": "47th",
+    "team": "CUET AugniPaksha",
+    "year": "2022",
+    "image": "/images/achievements/BUET(1).jpg",
+    "summary": "Ranked 47th against university teams from across the country."
+  },
+  {
+    "id": "sylhet-junior",
+    "category": "iupc",
+    "title": "Sylhet Inter University Junior Contest",
+    "rank": "12th",
+    "summary": "Ranked 12th at the junior inter-university contest."
+  },
+  {
+    "id": "cuet-intra-junior",
+    "category": "iupc",
+    "title": "CUET Intra Junior Programming Contest 2021",
+    "rank": "3rd",
+    "year": "2021",
+    "summary": "Second runner-up (3rd place) at the intra-university junior contest."
+  },
+  {
+    "id": "buet-cse-fest-2024",
+    "category": "hackathon",
+    "title": "BUET CSE Fest 2024 Hackathon",
+    "rank": "Top 16",
+    "team": "National",
+    "year": "2024",
+    "summary": "Finished among the top 16 teams in the national hackathon at BUET CSE Fest 2024."
+  },
+  {
+    "id": "electrical-surge",
+    "category": "hackathon",
+    "title": "Electrical Surge 2.0 Hackathon",
+    "rank": "2nd Runner-up",
+    "team": "CUET IEEE",
+    "image": "/images/achievements/SEC.jpeg",
+    "summary": "Second runner-up at the hackathon organized by CUET IEEE."
+  },
+  {
+    "id": "devops-hackathon",
+    "category": "hackathon",
+    "title": "DEVOPS Hackathon: Building Platform Using Cloud",
+    "rank": "2nd Round",
+    "team": "Poridhi × Brain Station 23",
+    "summary": "Advanced to the second round of the cloud platform hackathon organized by Poridhi and powered by Brain Station 23."
+  }
+]
