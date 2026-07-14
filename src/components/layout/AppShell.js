@@ -287,7 +287,7 @@ export default function AppShell({ children }) {
       <div
         className={cn("transition-[padding] duration-300 ease-out", contentPad)}
       >
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="pt-16">{children}</main>
         <Footer />
       </div>
     </>
