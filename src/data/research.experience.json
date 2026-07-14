@@ -36,7 +36,8 @@
     "subtitle": "Supervised by Dr. Muhammad Ibrahim Khan",
     "duration": "2024 – 2025",
     "highlights": [
-      "Built a comprehensive Bengali blog dataset of 9,012 annotated posts and proposed a transformer-based dual-encoder architecture, achieving an 84% F1@10 score.",
+      "Built a comprehensive Bengali blog dataset of 9,012 annotated posts.",
+      "Proposed a transformer-based dual-encoder architecture, achieving an 84% F1@10 score.",
       "Ran a comparison analysis against existing keyword-extraction methods to benchmark the proposed approach."
     ],
     "technologies": ["Python", "PyTorch", "Transformers", "NLP"]
