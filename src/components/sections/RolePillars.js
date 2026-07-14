@@ -12,13 +12,15 @@ export default function RolePillars() {
   const teach = teachingData[0];
   const pub = publications.find((p) => p.featured) || publications[0];
 
+  const highlightText = (h) => (typeof h === "string" ? h : h?.text);
+
   const pillars = [
     {
       overline: "Industry",
       title: eng.role,
       org: eng.company,
       meta: `${eng.location} · ${eng.duration}`,
-      description: eng.highlights[0],
+      description: highlightText(eng.highlights[0]),
       href: "/experience#engineering",
     },
     {
@@ -26,7 +28,7 @@ export default function RolePillars() {
       title: teach.role,
       org: teach.institution,
       meta: `${teach.duration}`,
-      description: teach.highlights[0],
+      description: highlightText(teach.highlights[0]),
       href: "/experience#teaching",
     },
     {
