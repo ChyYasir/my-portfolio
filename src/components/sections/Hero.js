@@ -67,18 +67,29 @@ export default function Hero() {
               and Competitive Programming.
             </p>
             <p>
-              My peer-reviewed work is{" "}
-              <span className="text-foreground font-medium">
-                {research.status.toLowerCase()}
+              I have represented{" "}
+              <span className="font-semibold text-foreground">CUET</span> at the{" "}
+              <span className="font-semibold text-foreground">
+                ICPC Dhaka Regional
               </span>{" "}
-              in a{" "}
+              and taken part in around{" "}
+              <span className="font-semibold text-foreground">
+                20 IUPCs and Hackathons
+              </span>
+              . You can{" "}
+              <Link href="/achievements" className={accentLink}>
+                view my achievements
+              </Link>{" "}
+              for the full picture.
+            </p>
+            <p>
+              I also have research experience, including a publication in a{" "}
+              <span className="text-foreground font-medium">
+                {research.badge}
+              </span>
+              . For a good overview, take a look at my{" "}
               <Link href="/experience#research" className={accentLink}>
-                {research.badge} journal
-              </Link>
-              . I also compete in programming contests, with three ICPC Asia
-              regional appearances and an inter-university contest{" "}
-              <Link href="/achievements#iupc" className={accentLink}>
-                championship
+                Research Experience
               </Link>
               .
             </p>
