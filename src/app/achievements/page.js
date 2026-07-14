@@ -13,7 +13,7 @@ const stats = [
   { value: "20+", label: "Competitions" },
   { value: "1st", label: "IUPC win" },
   { value: "2000+", label: "Problems solved" },
-  { value: "3×", label: "ICPC regionalist" },
+  { value: "2×", label: "ICPC regionalist" },
 ];
 
 const sections = [
@@ -32,13 +32,15 @@ function AchievementCard({ item, index }) {
       transition={{ delay: index * 0.06 }}
       className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl bg-elevated border border-border overflow-hidden"
     >
-      <div className="relative h-60 lg:h-auto lg:min-h-[280px] bg-subtle">
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className="object-cover"
-        />
+      <div className="relative h-60 lg:h-auto lg:min-h-[280px] bg-gradient-to-br from-subtle to-accent-muted">
+        {item.image && (
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover"
+          />
+        )}
         <div className="absolute top-4 left-4">
           <span className="px-3 py-1.5 text-sm font-bold font-display bg-accent text-on-accent rounded-lg">
             {item.rank}
@@ -46,10 +48,11 @@ function AchievementCard({ item, index }) {
         </div>
       </div>
       <div className="p-7 md:p-9 flex flex-col justify-center">
-        <p className="text-sm font-mono text-tertiary mb-2">
-          {item.year}
-          {item.team && ` · ${item.team}`}
-        </p>
+        {(item.year || item.team) && (
+          <p className="text-sm font-mono text-tertiary mb-2">
+            {[item.year, item.team].filter(Boolean).join(" · ")}
+          </p>
+        )}
         <h3 className="font-display font-semibold text-2xl md:text-3xl text-foreground mb-3 leading-tight">
           {item.title}
         </h3>
@@ -88,7 +91,7 @@ export default function AchievementsPage() {
     <PageLayout>
       <SectionHeader
         title="Achievements"
-        description="Competitive programming milestones across ICPC regionals, inter-university contests, and years of problem-solving practice."
+        description="Results from ICPC regionals, inter-university contests, and hackathons, backed by 2000+ problems solved across online judges."
       />
 
       <motion.div
