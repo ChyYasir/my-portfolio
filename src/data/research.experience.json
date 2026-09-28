@@ -1,12 +1,38 @@
 [
   {
+    "id": "memory-injection-llm-agents",
+    "institution": "Memory Injection Attacks on Long-Term Memory of LLM Agents",
+    "role": "Ongoing Research",
+    "subtitle": "In collaboration with Dr. Shahnewaz Karim Sakib and Dr. Anindya Bijoy Das",
+    "duration": "Jul 2026 – Present",
+    "highlights": [
+      "Investigating existing memory injection attacks on LLM agents' long-term memory and their limitations.",
+      "Analyzing LLM agent memory vulnerabilities to improve both attack strategies and defense mechanisms."
+    ],
+    "technologies": ["LLM Agents", "Security", "Memory Systems"]
+  },
+  {
+    "id": "cross-chain-bridge-security",
+    "institution": "Proactive Security for Cross-Chain Bridges Against Adversarial Attacks",
+    "role": "Ongoing Research",
+    "subtitle": "In collaboration with Dr. Shahnewaz Karim Sakib and Dr. Anindya Bijoy Das",
+    "duration": "Jul 2026 – Present",
+    "highlights": [
+      "Investigating how adversaries, including passive attackers, exploit vulnerabilities in cross-chain bridges and transactions.",
+      "Identifying weaknesses in bridge architectures and developing proactive security mechanisms against them."
+    ],
+    "technologies": ["Blockchain Security", "Cross-chain Bridges", "Adversarial Attacks"]
+  },
+  {
     "id": "cross-chain-security",
     "institution": "Attack Scenarios in Cross-Chain Blockchain Interactions",
     "role": "Ongoing Research, CUET",
     "subtitle": "Supervised by Dr. Rahma Bintey Mufiz Mukta",
-    "duration": "2026 – Present",
+    "duration": "Jan 2026 – Present",
     "highlights": [
-      "Conducting a comprehensive survey and taxonomy of security vulnerabilities and attack patterns in cross-chain communication protocols (manuscript under preparation)."
+      "Conducted a comprehensive survey and taxonomy of security vulnerabilities and attack patterns in cross-chain communication protocols.",
+      "Collected and analyzed 50+ real-world cross-chain bridge attack incidents from 2022 to August 2026, drawing from sources such as bridges' own post-mortem reports and third-party security audits.",
+      "Mapped attacks to specific attack patterns and functional domains based on analysis."
     ],
     "technologies": ["Blockchain Security", "Cross-chain Protocols", "Survey & Taxonomy"]
   },
@@ -15,7 +41,7 @@
     "institution": "Predictive Model for Birth Delivery Mode",
     "role": "Research Assistant (Freelance)",
     "subtitle": "Supporting Dr. Rubana Hoque Chowdhury's PhD research",
-    "duration": "2023 – Present",
+    "duration": "Sep 2023 – Nov 2025",
     "highlights": [
       {
         "text": "View my work for this research on GitHub:",
@@ -25,7 +51,7 @@
       "Worked as a research assistant to Dr. Rubana Hoque Chowdhury on her PhD research in an iterative loop: reviewing the supplied literature, implementing the proposed methods in code, then jointly experimenting on and refining the resulting models.",
       "Achieved 99% accuracy for cesarean vs. vaginal delivery prediction and 94% accuracy for spontaneous vs. induced delivery classification, using machine learning and geometric feature extraction on Electrohysterogram (EHG) signals.",
       "Re-implemented and validated methods from prior published EHG studies, and built the analysis and figures behind two of her publications and her annual PhD committee reviews.",
-      "Supplied experimental evidence throughout her PhD journey, from proposal defence through dissertation submission and final defence, and continue the collaboration on her post-PhD research (2026 to present)."
+      "Supplied experimental evidence throughout her PhD journey, from proposal defence through dissertation submission and final defence."
     ],
     "technologies": ["Python", "Scikit-learn", "Machine Learning", "EHG Signals"]
   },
